@@ -23,7 +23,6 @@
 		B22496592ABD6F3600BC6B09 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22496582ABD6F3600BC6B09 /* Review.swift */; };
 		B224965B2ABD8A7700BC6B09 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B224965A2ABD8A7700BC6B09 /* UIImage+.swift */; };
 		B224965D2AC41F8500BC6B09 /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B224965C2AC41F8500BC6B09 /* UILabel+.swift */; };
-		B22F60CE2B64EF8900BA6922 /* LaunchingEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22F60CD2B64EF8900BA6922 /* LaunchingEventView.swift */; };
 		B24259032A590ECA006C5223 /* ConvenienceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24259022A590ECA006C5223 /* ConvenienceStore.swift */; };
 		B24259092A594140006C5223 /* ProductAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24259082A594140006C5223 /* ProductAPIService.swift */; };
 		B242590B2A594368006C5223 /* ProductPageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B242590A2A594368006C5223 /* ProductPageEntity.swift */; };
@@ -215,6 +214,7 @@
 		BAABF2B62BC29D1A00AE73DA /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = BAABF2B52BC29D1A00AE73DA /* FirebaseCrashlytics */; };
 		BAABF2B92BC2A07200AE73DA /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = BAABF2B82BC2A07200AE73DA /* GoogleMobileAds */; };
 		BAABF2BC2BC2A12B00AE73DA /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = BAABF2BB2BC2A12B00AE73DA /* Lottie */; };
+		BAABF2BF2BC2A4A700AE73DA /* LaunchingEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAABF2BE2BC2A4A600AE73DA /* LaunchingEventView.swift */; };
 		BAB54A952A5949B700D45A80 /* ImageAssetKind+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB54A942A5949B700D45A80 /* ImageAssetKind+Splash.swift */; };
 		BABBB9662A69951700BC36A0 /* SearchBarViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABBB9652A69951700BC36A0 /* SearchBarViewDelegate.swift */; };
 		BAD6AEFA2AEC519F0062B16F /* ReviewFeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD6AEF92AEC519F0062B16F /* ReviewFeedbackButton.swift */; };
@@ -367,7 +367,6 @@
 		B22496582ABD6F3600BC6B09 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		B224965A2ABD8A7700BC6B09 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		B224965C2AC41F8500BC6B09 /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
-		B22F60CD2B64EF8900BA6922 /* LaunchingEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LaunchingEventView.swift; path = "Pyonsnal-Color/Common/UserEvent/LauncingEvent/LaunchingEventView.swift"; sourceTree = SOURCE_ROOT; };
 		B24259022A590ECA006C5223 /* ConvenienceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenienceStore.swift; sourceTree = "<group>"; };
 		B24259082A594140006C5223 /* ProductAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAPIService.swift; sourceTree = "<group>"; };
 		B242590A2A594368006C5223 /* ProductPageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageEntity.swift; sourceTree = "<group>"; };
@@ -536,6 +535,7 @@
 		BA9E234F2A234B4D00A539D5 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		BAAB90322A4FFE3E003A7647 /* BackNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackNavigationView.swift; sourceTree = "<group>"; };
 		BAAB90362A5051D2003A7647 /* BackNavigationViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackNavigationViewDelegate.swift; sourceTree = "<group>"; };
+		BAABF2BE2BC2A4A600AE73DA /* LaunchingEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchingEventView.swift; sourceTree = "<group>"; };
 		BAB54A942A5949B700D45A80 /* ImageAssetKind+Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageAssetKind+Splash.swift"; sourceTree = "<group>"; };
 		BABBB9652A69951700BC36A0 /* SearchBarViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewDelegate.swift; sourceTree = "<group>"; };
 		BAD6AEF92AEC519F0062B16F /* ReviewFeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFeedbackButton.swift; sourceTree = "<group>"; };
@@ -986,7 +986,7 @@
 		B2C2AEA82B64EF2200C8C74D /* LaunchingEvent */ = {
 			isa = PBXGroup;
 			children = (
-				B22F60CD2B64EF8900BA6922 /* LaunchingEventView.swift */,
+				BAABF2BE2BC2A4A600AE73DA /* LaunchingEventView.swift */,
 			);
 			name = LaunchingEvent;
 			path = LauncingEvent;
@@ -1332,9 +1332,35 @@
 		BA9E23392A21EF3000A539D5 /* Pyonsnal-Color */ = {
 			isa = PBXGroup;
 			children = (
+				BAABF2BD2BC2A25B00AE73DA /* Scene */,
 				F06F40272B35E2D800897396 /* Manager */,
-				B224964D2ABC1BCA00BC6B09 /* ReviewPopup */,
-				B22496412ABC110F00BC6B09 /* StarRatingReview */,
+				BA00B73A2A46B95300BB3795 /* 3rdParty */,
+				BA00B7372A46B8A600BB3795 /* DesignSystem */,
+				B24F1D3E2A4AD7A000AA03DC /* NotificationList */,
+				BA87E3DA2A4623D7000A9DEC /* Entity */,
+				BAEA1BFB2A3477A80028A90A /* Subview */,
+				F0964E3D2A2A16D10028DCA2 /* Pyonsnal-Color.entitlements */,
+				BA18075D2A2F1D5A00295398 /* Networking */,
+				BA1807532A2F13DA00295398 /* Extension */,
+				BA437F092A2358BA00C5DFA8 /* Application */,
+				BA437F082A23583400C5DFA8 /* Resource */,
+				B2A57C3D2A2EF8FF005DB83E /* Service */,
+			);
+			path = "Pyonsnal-Color";
+			sourceTree = "<group>";
+		};
+		BAABF2BD2BC2A25B00AE73DA /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				BA437F112A235ED700C5DFA8 /* LoggedOut */,
+				BAED882A2A24C3DA00DA6257 /* Root */,
+				BA87E3C72A45C579000A9DEC /* ProductDetail */,
+				B2538B8F2A3454FA00B7C3F0 /* ProfileHome */,
+				F075D0C32B052ED500DD0F5E /* ProfileEdit */,
+				B2538B8E2A3454F100B7C3F0 /* EventHome */,
+				B2538B8D2A3454EA00B7C3F0 /* ProductHome */,
+				B2F169D42A3471EB008199D8 /* RootTabBar */,
+				B2538B8B2A3454D600B7C3F0 /* LoggedIn */,
 				B2F258112AAF03000022013E /* DetailReview */,
 				F0DEAB992AAF40E300941A5F /* FavoriteHome */,
 				B28A591D2A6FB29200431F39 /* ProductFilter */,
@@ -1344,28 +1370,10 @@
 				B2A529442A57F1E30010656A /* LogoutPopup */,
 				B2EECB6D2B6A892900B328C1 /* LoginPopup */,
 				F0EE10A62A4B387A00B8DF4F /* AccountSetting */,
-				BA00B73A2A46B95300BB3795 /* 3rdParty */,
-				BA00B7372A46B8A600BB3795 /* DesignSystem */,
-				B24F1D3E2A4AD7A000AA03DC /* NotificationList */,
-				BA87E3DA2A4623D7000A9DEC /* Entity */,
-				BA87E3C72A45C579000A9DEC /* ProductDetail */,
-				B2538B8F2A3454FA00B7C3F0 /* ProfileHome */,
-				F075D0C32B052ED500DD0F5E /* ProfileEdit */,
-				B2538B8E2A3454F100B7C3F0 /* EventHome */,
-				B2538B8D2A3454EA00B7C3F0 /* ProductHome */,
-				B2F169D42A3471EB008199D8 /* RootTabBar */,
-				B2538B8B2A3454D600B7C3F0 /* LoggedIn */,
-				BAEA1BFB2A3477A80028A90A /* Common */,
-				F0964E3D2A2A16D10028DCA2 /* Pyonsnal-Color.entitlements */,
-				BA18075D2A2F1D5A00295398 /* Networking */,
-				BA1807532A2F13DA00295398 /* Extension */,
-				BAED882A2A24C3DA00DA6257 /* Root */,
-				BA437F092A2358BA00C5DFA8 /* Application */,
-				BA437F082A23583400C5DFA8 /* Resource */,
-				BA437F112A235ED700C5DFA8 /* LoggedOut */,
-				B2A57C3D2A2EF8FF005DB83E /* Service */,
+				B224964D2ABC1BCA00BC6B09 /* ReviewPopup */,
+				B22496412ABC110F00BC6B09 /* StarRatingReview */,
 			);
-			path = "Pyonsnal-Color";
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		BAD6AEF82AEC51970062B16F /* ReviewFeedbackButton */ = {
@@ -1450,7 +1458,7 @@
 			path = ReviewCell;
 			sourceTree = "<group>";
 		};
-		BAEA1BFB2A3477A80028A90A /* Common */ = {
+		BAEA1BFB2A3477A80028A90A /* Subview */ = {
 			isa = PBXGroup;
 			children = (
 				B2EECB672B6A6EEC00B328C1 /* Popup */,
@@ -1471,7 +1479,7 @@
 				F0D6FFA72A39F57600C55E27 /* Cell */,
 				F02116FE2A762549007A053A /* FilterStateManager.swift */,
 			);
-			path = Common;
+			path = Subview;
 			sourceTree = "<group>";
 		};
 		BAED359B2AC5D428002BC69D /* ReviewTagListView */ = {
@@ -1988,7 +1996,6 @@
 				B282050C2A34700300F9242F /* EventHomeBuilder.swift in Sources */,
 				B2F2581B2AAF03210022013E /* DetailReviewViewHolder.swift in Sources */,
 				B22496592ABD6F3600BC6B09 /* Review.swift in Sources */,
-				B22F60CE2B64EF8900BA6922 /* LaunchingEventView.swift in Sources */,
 				BAE984492AACFFFF00ED22CB /* ProductDetailReviewWriteCell.swift in Sources */,
 				BA437F182A235F5100C5DFA8 /* LoggedOutBuilder.swift in Sources */,
 				B28A59152A6E991100431F39 /* CurationFooterView.swift in Sources */,
@@ -2004,6 +2011,7 @@
 				B28205032A346FDD00F9242F /* ProfileHomeViewController.swift in Sources */,
 				F0E915AF2AA87B97000919DA /* ControlPublisher.swift in Sources */,
 				BA8322612AB77FCA00D2E1EB /* ReviewEntity.swift in Sources */,
+				BAABF2BF2BC2A4A700AE73DA /* LaunchingEventView.swift in Sources */,
 				F0EE10A32A4B242C00B8DF4F /* ProfileCell.swift in Sources */,
 				B2C25CDA2B65166E005C6F0D /* EmptyResponse.swift in Sources */,
 				B24F1D362A43E5B500AA03DC /* ProductListViewController.swift in Sources */,
