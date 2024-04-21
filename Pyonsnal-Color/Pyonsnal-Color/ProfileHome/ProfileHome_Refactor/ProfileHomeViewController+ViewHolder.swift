@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-extension ProfileHomeViewController_R {
+extension ProfileHomeViewControllerRefactor {
     // MARK: - UI Component
     class ViewHolder: ViewHolderable {
         
@@ -17,8 +17,7 @@ extension ProfileHomeViewController_R {
             static let profileEditButtonSize: CGFloat = 48
             static let profileImageViewLeading: CGFloat = 17
             static let profileContainerViewHeight: CGFloat = 104
-            
-            static let dividerMargin: CGFloat = 12
+            static let dividerHeight: CGFloat = 12
         }
         
         private let profileContainerView: UIView = {
@@ -99,7 +98,7 @@ extension ProfileHomeViewController_R {
             dividerView.snp.makeConstraints {
                 $0.top.equalTo(profileContainerView.snp.bottom)
                 $0.leading.trailing.equalToSuperview()
-                $0.height.equalTo(Size.dividerMargin)
+                $0.height.equalTo(Size.dividerHeight)
             }
             
             tableView.snp.makeConstraints {

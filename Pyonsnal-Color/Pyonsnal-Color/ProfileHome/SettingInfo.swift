@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SettingInfo {
+struct SettingInfo { // TODO: 삭제
     let title: String
     
     var infoUrl: Setting?

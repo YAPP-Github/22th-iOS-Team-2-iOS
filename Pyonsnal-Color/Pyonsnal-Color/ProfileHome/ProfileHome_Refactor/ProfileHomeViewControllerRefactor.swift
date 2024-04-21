@@ -9,7 +9,7 @@ import UIKit
 import Combine
 import MessageUI
 
-final class ProfileHomeViewController_R: BaseViewController {
+final class ProfileHomeViewControllerRefactor: BaseViewController {
     
     // MARK: - Property
     let viewHolder: ViewHolder = .init()
@@ -98,13 +98,13 @@ final class ProfileHomeViewController_R: BaseViewController {
         
         let mail = MFMailComposeViewController()
         mail.mailComposeDelegate = self
-        mail.setToRecipients([viewModel.payload.emailAddress])
+        mail.setToRecipients([viewModel.emailAddress])
         self.present(mail, animated: true)
     }
 }
 
 // MARK: - UITableViewDelegate
-extension ProfileHomeViewController_R: UITableViewDelegate {
+extension ProfileHomeViewControllerRefactor: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 48
     }
@@ -120,7 +120,7 @@ extension ProfileHomeViewController_R: UITableViewDelegate {
 }
 
 // MARK: - UITableViewDataSource
-extension ProfileHomeViewController_R: UITableViewDataSource {
+extension ProfileHomeViewControllerRefactor: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let section = viewModel.sections[section]
         switch section {
@@ -145,7 +145,7 @@ extension ProfileHomeViewController_R: UITableViewDataSource {
 }
 
 // MARK: - MFMailComposeViewControllerDelegate
-extension ProfileHomeViewController_R: MFMailComposeViewControllerDelegate {
+extension ProfileHomeViewControllerRefactor: MFMailComposeViewControllerDelegate {
     func mailComposeController(
         _ controller: MFMailComposeViewController,
         didFinishWith result: MFMailComposeResult,
@@ -156,4 +156,3 @@ extension ProfileHomeViewController_R: MFMailComposeViewControllerDelegate {
         }
     }
 }
-

@@ -25,6 +25,7 @@ extension ProfileHomeViewModel {
     struct Output {
         var profileImage = PassthroughSubject<ImageAssetKind, Never>()
         var memberInfo = PassthroughSubject<MemberInfoEntity, Never>()
+        var showEmail = PassthroughSubject<Void, Never>()
     }
 }
 
@@ -32,7 +33,7 @@ final class ProfileHomeViewModel: BaseViewModelProtocol {
     // MARK: - Property
     private let dependency: Dependency
     private let payload: Payload
-    private let router: ProfileHomeRouter_R
+    private let router: ProfileHomeRouterRefactor
     
     @Published private var memberInfo: MemberInfoEntity?
     @Published private var action: Action?
@@ -43,8 +44,8 @@ final class ProfileHomeViewModel: BaseViewModelProtocol {
     var settingItems: [ProfileHomeSettingItem] = [.etc, .email, .version, .teams, .account]
     let emailAddress = "pallete@pyonsnalcolor.store"
     
-    
-    init(dependency: Dependency, payload: Payload, router: ProfileHomeRouter_R) {
+    // MARK: - Initializer
+    init(dependency: Dependency, payload: Payload, router: ProfileHomeRouterRefactor) {
         self.dependency = dependency
         self.payload = payload
         self.router = router
@@ -52,6 +53,7 @@ final class ProfileHomeViewModel: BaseViewModelProtocol {
         self.requestMemberInfo()
     }
     
+    // MARK: - Binding
     func bindActions() {
         $action
             .sink { [weak self] action in
@@ -74,32 +76,41 @@ final class ProfileHomeViewModel: BaseViewModelProtocol {
         self.action = action
     }
     
-    private func processAction(_ action: Action) {
-        switch action {
-        case .didTapProfileEditButton:
-            self.didTapProfileEditButton()
-        case .didSelectItem(let item):
-            print()
-            // TODO: logic port
-        }
-    }
-    
-    private func didTapProfileEditButton() {
-        guard let memberInfo else { return }
-        guard !memberInfo.isGuest else {
-            // TODO: router (self.attachLoggedOut())
-            return
-        }
-        // TODO: router (router?.attachProfileEdit(with: memberInfo))
-    }
-    
     func requestMemberInfo() {
         dependency.memberAPIService.info()
             .map { $0.value }
             .assign(to: &$memberInfo)
     }
     
-    func setGuestMode() {
+    // MARK: - Private Methodss
+    private func processAction(_ action: Action) {
+        switch action {
+        case .didTapProfileEditButton:
+            self.didTapProfileEditButton()
+        case .didSelectItem(let item):
+            switch item {
+            case .email:
+                output.showEmail.send()
+            case .teams:
+                self.router.presentCommonWebView(title: ProfileHomeSettingItem.teams.title, url: ProfileUrl.team)
+            case .account:
+                self.router.presentAccountSetting()
+            default:
+                return
+            }
+        }
+    }
+    
+    private func didTapProfileEditButton() {
+        guard let memberInfo else { return }
+        guard !memberInfo.isGuest else {
+            router.presentLoggedOut()
+            return
+        }
+        router.presentProfileEdit(memberInfo: memberInfo)
+    }
+    
+    private func setGuestMode() {
         settingItems.remove(at: ProfileHomeSettingItem.account.rawValue)
         output.profileImage.send(.iconDetail)
     }

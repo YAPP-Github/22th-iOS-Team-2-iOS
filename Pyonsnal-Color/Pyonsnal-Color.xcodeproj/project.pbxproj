@@ -339,14 +339,14 @@
 		F0EE10B02A4B4DF600B8DF4F /* ItemIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EE10AF2A4B4DF600B8DF4F /* ItemIdentifier.swift */; };
 		F0F203122AB5C04300D4CB6A /* FavoriteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F203112AB5C04300D4CB6A /* FavoriteAPI.swift */; };
 		F0F203142AB5C36200D4CB6A /* FavoriteAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F203132AB5C36200D4CB6A /* FavoriteAPIService.swift */; };
-		F0F8A9B52BD4CF2C00E5048D /* ProfileHomeViewController_R.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8A9B42BD4CF2C00E5048D /* ProfileHomeViewController_R.swift */; };
+		F0F8A9B52BD4CF2C00E5048D /* ProfileHomeViewControllerRefactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8A9B42BD4CF2C00E5048D /* ProfileHomeViewControllerRefactor.swift */; };
 		F0F8A9B72BD4CF5200E5048D /* ProfileHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8A9B62BD4CF5200E5048D /* ProfileHomeViewModel.swift */; };
 		F0F8A9B92BD4D02F00E5048D /* BaseViewControllerPorotocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8A9B82BD4D02F00E5048D /* BaseViewControllerPorotocol.swift */; };
 		F0F8A9BC2BD4D0DE00E5048D /* BaseViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8A9BB2BD4D0DE00E5048D /* BaseViewModelProtocol.swift */; };
 		F0F8A9BE2BD4D2DC00E5048D /* ProfileHomeViewController+ViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8A9BD2BD4D2DC00E5048D /* ProfileHomeViewController+ViewHolder.swift */; };
-		F0F8A9C02BD4D45200E5048D /* ProfileHomeRouter_R.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8A9BF2BD4D45200E5048D /* ProfileHomeRouter_R.swift */; };
+		F0F8A9C02BD4D45200E5048D /* ProfileHomeRouterRefactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8A9BF2BD4D45200E5048D /* ProfileHomeRouterRefactor.swift */; };
 		F0F8A9C22BD4D47900E5048D /* BaseRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8A9C12BD4D47900E5048D /* BaseRouterProtocol.swift */; };
-		F0F8A9C42BD4D4B800E5048D /* ProfileHomeBuilder_R.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8A9C32BD4D4B800E5048D /* ProfileHomeBuilder_R.swift */; };
+		F0F8A9C42BD4D4B800E5048D /* ProfileHomeBuilderRefactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8A9C32BD4D4B800E5048D /* ProfileHomeBuilderRefactor.swift */; };
 		F0F8A9C62BD4E13F00E5048D /* ProfileHomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8A9C52BD4E13F00E5048D /* ProfileHomeSection.swift */; };
 /* End PBXBuildFile section */
 
@@ -676,14 +676,14 @@
 		F0F203072AB5971300D4CB6A /* ProductType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductType.swift; sourceTree = "<group>"; };
 		F0F203112AB5C04300D4CB6A /* FavoriteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAPI.swift; sourceTree = "<group>"; };
 		F0F203132AB5C36200D4CB6A /* FavoriteAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteAPIService.swift; sourceTree = "<group>"; };
-		F0F8A9B42BD4CF2C00E5048D /* ProfileHomeViewController_R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHomeViewController_R.swift; sourceTree = "<group>"; };
+		F0F8A9B42BD4CF2C00E5048D /* ProfileHomeViewControllerRefactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHomeViewControllerRefactor.swift; sourceTree = "<group>"; };
 		F0F8A9B62BD4CF5200E5048D /* ProfileHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHomeViewModel.swift; sourceTree = "<group>"; };
 		F0F8A9B82BD4D02F00E5048D /* BaseViewControllerPorotocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewControllerPorotocol.swift; sourceTree = "<group>"; };
 		F0F8A9BB2BD4D0DE00E5048D /* BaseViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModelProtocol.swift; sourceTree = "<group>"; };
 		F0F8A9BD2BD4D2DC00E5048D /* ProfileHomeViewController+ViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProfileHomeViewController+ViewHolder.swift"; sourceTree = "<group>"; };
-		F0F8A9BF2BD4D45200E5048D /* ProfileHomeRouter_R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHomeRouter_R.swift; sourceTree = "<group>"; };
+		F0F8A9BF2BD4D45200E5048D /* ProfileHomeRouterRefactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHomeRouterRefactor.swift; sourceTree = "<group>"; };
 		F0F8A9C12BD4D47900E5048D /* BaseRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouterProtocol.swift; sourceTree = "<group>"; };
-		F0F8A9C32BD4D4B800E5048D /* ProfileHomeBuilder_R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHomeBuilder_R.swift; sourceTree = "<group>"; };
+		F0F8A9C32BD4D4B800E5048D /* ProfileHomeBuilderRefactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHomeBuilderRefactor.swift; sourceTree = "<group>"; };
 		F0F8A9C52BD4E13F00E5048D /* ProfileHomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHomeSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -896,7 +896,7 @@
 		B2538B8F2A3454FA00B7C3F0 /* ProfileHome */ = {
 			isa = PBXGroup;
 			children = (
-				F0F8A9B32BD4CF1400E5048D /* ProfileHome */,
+				F0F8A9B32BD4CF1400E5048D /* ProfileHome_Refactor */,
 				B28204FE2A346FDD00F9242F /* ProfileHomeRouter.swift */,
 				B28204FF2A346FDD00F9242F /* ProfileHomeViewController.swift */,
 				B28205002A346FDD00F9242F /* ProfileHomeBuilder.swift */,
@@ -1798,16 +1798,16 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
-		F0F8A9B32BD4CF1400E5048D /* ProfileHome */ = {
+		F0F8A9B32BD4CF1400E5048D /* ProfileHome_Refactor */ = {
 			isa = PBXGroup;
 			children = (
-				F0F8A9B42BD4CF2C00E5048D /* ProfileHomeViewController_R.swift */,
+				F0F8A9B42BD4CF2C00E5048D /* ProfileHomeViewControllerRefactor.swift */,
 				F0F8A9B62BD4CF5200E5048D /* ProfileHomeViewModel.swift */,
 				F0F8A9BD2BD4D2DC00E5048D /* ProfileHomeViewController+ViewHolder.swift */,
-				F0F8A9BF2BD4D45200E5048D /* ProfileHomeRouter_R.swift */,
-				F0F8A9C32BD4D4B800E5048D /* ProfileHomeBuilder_R.swift */,
+				F0F8A9BF2BD4D45200E5048D /* ProfileHomeRouterRefactor.swift */,
+				F0F8A9C32BD4D4B800E5048D /* ProfileHomeBuilderRefactor.swift */,
 			);
-			path = ProfileHome;
+			path = ProfileHome_Refactor;
 			sourceTree = "<group>";
 		};
 		F0F8A9BA2BD4D07000E5048D /* Base */ = {
@@ -1990,7 +1990,7 @@
 				B290A56B2AE64F6800D87AF5 /* ReviewUploadEntity.swift in Sources */,
 				F0DB84602B132EA4003CCA8A /* ProfileEdit+ViewHolder.swift in Sources */,
 				F0C6986A2A6BB1000019C677 /* ImageAsset+Filter.swift in Sources */,
-				F0F8A9C02BD4D45200E5048D /* ProfileHomeRouter_R.swift in Sources */,
+				F0F8A9C02BD4D45200E5048D /* ProfileHomeRouterRefactor.swift in Sources */,
 				F040E9D52A6D967300DF0C4A /* KeywordFilterCell.swift in Sources */,
 				B28205132A34702B00F9242F /* ProductHomeViewController.swift in Sources */,
 				F097EF342A571DD300A7FB9C /* CommonWebRouter.swift in Sources */,
@@ -2065,7 +2065,7 @@
 				BA437F212A2360E100C5DFA8 /* AppComponent.swift in Sources */,
 				B22496552ABC1BE400BC6B09 /* ReviewPopupInteractor.swift in Sources */,
 				B28A592E2A726C6500431F39 /* CurationSectionLayout.swift in Sources */,
-				F0F8A9B52BD4CF2C00E5048D /* ProfileHomeViewController_R.swift in Sources */,
+				F0F8A9B52BD4CF2C00E5048D /* ProfileHomeViewControllerRefactor.swift in Sources */,
 				B24CAAE52A55AC33005BE499 /* NotificationListViewController.swift in Sources */,
 				BAE442C82A6D7C3900BD6582 /* EmptyCell+ViewHolder.swift in Sources */,
 				B24F1D4B2A4BB82D00AA03DC /* TitleNavigationView.swift in Sources */,
@@ -2227,7 +2227,7 @@
 				B2EECB6B2B6A71E000B328C1 /* PopupViewDelegate.swift in Sources */,
 				F013DECB2AFF6BFA00A1F34C /* FavoriteHomeDelegate.swift in Sources */,
 				B28205022A346FDD00F9242F /* ProfileHomeRouter.swift in Sources */,
-				F0F8A9C42BD4D4B800E5048D /* ProfileHomeBuilder_R.swift in Sources */,
+				F0F8A9C42BD4D4B800E5048D /* ProfileHomeBuilderRefactor.swift in Sources */,
 				F01535452A45A6F800A2A8F2 /* ItemHeaderTitleView.swift in Sources */,
 				B2A5294A2A57F2220010656A /* LogoutPopupViewController.swift in Sources */,
 				B2538B942A34551D00B7C3F0 /* LoggedInBuilder.swift in Sources */,

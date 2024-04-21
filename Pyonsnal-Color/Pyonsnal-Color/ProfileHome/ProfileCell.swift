@@ -19,14 +19,13 @@ final class ProfileCell: UITableViewCell {
         static let subLabelTop: CGFloat = 11
         static let subLabelBottom: CGFloat = 17
         
-        static let leadingMargin: CGFloat = 16
         static let dividerHeight: CGFloat = 1
     }
     
-    //MARK: - Private Property
+    // MARK: - Private Property
     private let viewHolder: ViewHolder = .init()
     
-    //MARK: - Initializer
+    // MARK: - Initializer
     override init(style: UITableViewCell.CellStyle,
                   reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -40,7 +39,11 @@ final class ProfileCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func update(text: String, isSectionIndex: Bool = false, hasSubLabel: Bool) {
+    func update(
+        text: String,
+        isSectionIndex: Bool = false,
+        hasSubLabel: Bool = false
+    ) {
         if isSectionIndex {
             setSectionUI()
         }
@@ -70,7 +73,7 @@ final class ProfileCell: UITableViewCell {
 }
 
 extension ProfileCell {
-    //MARK: - UI Component
+    // MARK: - UI Component
     class ViewHolder: ViewHolderable {
         let titleLabel: UILabel = {
             let label = UILabel()
@@ -103,21 +106,21 @@ extension ProfileCell {
         
         func configureConstraints(for view: UIView) {
             titleLabel.snp.makeConstraints {
-                $0.leading.equalToSuperview().offset(Size.leadingMargin)
+                $0.leading.equalToSuperview().offset(.spacing16)
                 $0.top.equalToSuperview().offset(Size.titleLabelTop)
                 $0.bottom.equalToSuperview().inset(Size.titleLabelBottom)
             }
             
             subLabel.snp.makeConstraints {
                 $0.top.equalToSuperview().offset(Size.subLabelTop)
-                $0.trailing.equalToSuperview().inset(Size.leadingMargin)
+                $0.trailing.equalToSuperview().inset(.spacing16)
                 $0.bottom.equalToSuperview().inset(Size.subLabelBottom)
             }
             
             dividerView.snp.makeConstraints {
                 $0.height.equalTo(Size.dividerHeight)
-                $0.leading.equalToSuperview().offset(Size.leadingMargin)
-                $0.trailing.equalToSuperview().inset(Size.leadingMargin)
+                $0.leading.equalToSuperview().offset(.spacing16)
+                $0.trailing.equalToSuperview().inset(.spacing16)
                 $0.bottom.equalToSuperview()
             }
         }

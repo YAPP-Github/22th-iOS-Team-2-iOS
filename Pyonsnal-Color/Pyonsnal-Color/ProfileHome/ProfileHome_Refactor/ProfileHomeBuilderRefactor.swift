@@ -7,21 +7,21 @@
 
 import Foundation
 
-struct ProfileHomeBuilder_R {
+struct ProfileHomeBuilderRefactor {
     private let dependency: ProfileHomeViewModel.Dependency
     
     init(dependency: ProfileHomeViewModel.Dependency) {
         self.dependency = dependency
     }
     
-    func build(payload: ProfileHomeViewModel.Payload) -> ProfileHomeViewController_R {
-        let router = ProfileHomeRouter_R()
+    func build(payload: ProfileHomeViewModel.Payload) -> ProfileHomeViewControllerRefactor {
+        let router = ProfileHomeRouterRefactor()
         let viewModel = ProfileHomeViewModel(
             dependency: dependency,
             payload: payload,
             router: router
         )
-        let viewController = ProfileHomeViewController_R(viewModel: viewModel)
+        let viewController = ProfileHomeViewControllerRefactor(viewModel: viewModel)
         router.viewController = viewController
         return viewController
     }
