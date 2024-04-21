@@ -40,17 +40,12 @@ final class ProfileCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func update(text: String, isSectionIndex: Bool = false) {
+    func update(text: String, isSectionIndex: Bool = false, hasSubLabel: Bool) {
         if isSectionIndex {
-            viewHolder.titleLabel.textColor = .gray500
-            viewHolder.titleLabel.font = .body3r
-            updateSectionTitleLayout()
+            setSectionUI()
         }
-        viewHolder.titleLabel.text = text
-    }
-    
-    func setSubLabelHidden(isShow: Bool) {
-        viewHolder.subLabel.isHidden = !isShow
+        self.setSubLabelHidden(isShow: hasSubLabel)
+        self.viewHolder.titleLabel.text = text
     }
     
     func setDividerHidden(isShow: Bool) {
@@ -63,7 +58,15 @@ final class ProfileCell: UITableViewCell {
         }
     }
     
+    private func setSectionUI() {
+        viewHolder.titleLabel.textColor = .gray500
+        viewHolder.titleLabel.font = .body3r
+        updateSectionTitleLayout()
+    }
     
+    private func setSubLabelHidden(isShow: Bool) {
+        viewHolder.subLabel.isHidden = !isShow
+    }
 }
 
 extension ProfileCell {

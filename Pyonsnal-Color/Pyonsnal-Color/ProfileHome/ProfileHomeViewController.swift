@@ -32,11 +32,11 @@ final class ProfileHomeViewController: UIViewController,
         static let dividerHeight: CGFloat = 1
     }
     
-    enum Section: String {
+    enum ProfileHomeSection: String {
         case setting
     }
     
-    enum Setting: Int {
+    enum ProfileHomeSettingItem: Int {
         case etc = 0
         case email
         case version
@@ -60,8 +60,8 @@ final class ProfileHomeViewController: UIViewController,
     private let viewHolder: ViewHolder = .init()
     private var cancellable = Set<AnyCancellable>()
     private var memberInfo: MemberInfoEntity?
-    private let sections: [Section] = [.setting]
-    private var settings: [Setting] = [.etc, .email, .version, .teams, .account]
+    private let sections: [ProfileHomeSection] = [.setting]
+    private var settings: [ProfileHomeSettingItem] = [.etc, .email, .version, .teams, .account]
     
     // MARK: - Initializer
     init() {
@@ -99,7 +99,7 @@ final class ProfileHomeViewController: UIViewController,
         }
         viewHolder.nickNameLabel.text = memberInfo.nickname
         if memberInfo.isGuest {
-            settings.remove(at: Setting.account.rawValue)
+            settings.remove(at: ProfileHomeSettingItem.account.rawValue)
             viewHolder.profileEditButton.setImage(.iconDetail, for: .normal)
         }
     }
@@ -151,8 +151,8 @@ extension ProfileHomeViewController: UITableViewDataSource {
         return index == 0
     }
     
-    private func isSubLabelToShow(section: Section, index: Int) -> Bool {
-        return (section == .setting) && (index == Setting.version.rawValue)
+    private func isSubLabelToShow(section: ProfileHomeSection, index: Int) -> Bool {
+        return (section == .setting) && (index == ProfileHomeSettingItem.version.rawValue)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -176,9 +176,9 @@ extension ProfileHomeViewController: UITableViewDataSource {
         switch section {
         case .setting:
             cell.update(text: settings[indexPath.row].title,
-                        isSectionIndex: isSectionIndex)
+                        isSectionIndex: isSectionIndex,
+                        hasSubLabel: isSubLabelToShow)
         }
-        cell.setSubLabelHidden(isShow: isSubLabelToShow)
         return cell
     }
 }
@@ -196,13 +196,13 @@ extension ProfileHomeViewController: UITableViewDelegate {
         if !isSectionIndex(with: indexPath.row) {
             switch section {
             case .setting:
-                if indexPath.row == Setting.email.rawValue {
+                if indexPath.row == ProfileHomeSettingItem.email.rawValue {
                     showEmailReport()
-                } else if indexPath.row == Setting.teams.rawValue {
+                } else if indexPath.row == ProfileHomeSettingItem.teams.rawValue {
                     let title = settings[indexPath.row].title
                     let settingInfo = SettingInfo(title: title, infoUrl: .teams)
                     listener?.didTapTeams(with: settingInfo)
-                } else if indexPath.row == Setting.account.rawValue {
+                } else if indexPath.row == ProfileHomeSettingItem.account.rawValue {
                     listener?.didTapAccountSetting()
                 }
                 
