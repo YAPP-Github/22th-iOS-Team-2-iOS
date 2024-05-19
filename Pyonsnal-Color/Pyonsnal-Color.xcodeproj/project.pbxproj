@@ -270,6 +270,11 @@
 		F0614E352BF9D7D5008AAF10 /* ProductInfoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E342BF9D7D5008AAF10 /* ProductInfoStackView.swift */; };
 		F0614E3E2BF9DD01008AAF10 /* MyReviewContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E3D2BF9DD01008AAF10 /* MyReviewContentView.swift */; };
 		F0614E412BF9DE43008AAF10 /* MyReviewContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E402BF9DE43008AAF10 /* MyReviewContentConfiguration.swift */; };
+		F0614E472BF9E775008AAF10 /* MyDetailReviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E432BF9E775008AAF10 /* MyDetailReviewRouter.swift */; };
+		F0614E482BF9E775008AAF10 /* MyDetailReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E442BF9E775008AAF10 /* MyDetailReviewViewController.swift */; };
+		F0614E492BF9E775008AAF10 /* MyDetailReviewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E452BF9E775008AAF10 /* MyDetailReviewBuilder.swift */; };
+		F0614E4A2BF9E775008AAF10 /* MyDetailReviewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E462BF9E775008AAF10 /* MyDetailReviewInteractor.swift */; };
+		F0614E4C2BF9EA55008AAF10 /* MyDetailReviewViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E4B2BF9EA55008AAF10 /* MyDetailReviewViewHolder.swift */; };
 		F0687BED2A529679004B5EAE /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0687BEC2A529679004B5EAE /* Config.swift */; };
 		F068A9702A99E76A000AFD52 /* FilterRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F068A96F2A99E76A000AFD52 /* FilterRenderable.swift */; };
 		F069DBE62A30B9850001D3DD /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069DBE52A30B9850001D3DD /* UIFont+.swift */; };
@@ -602,6 +607,11 @@
 		F0614E342BF9D7D5008AAF10 /* ProductInfoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoStackView.swift; sourceTree = "<group>"; };
 		F0614E3D2BF9DD01008AAF10 /* MyReviewContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewContentView.swift; sourceTree = "<group>"; };
 		F0614E402BF9DE43008AAF10 /* MyReviewContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewContentConfiguration.swift; sourceTree = "<group>"; };
+		F0614E432BF9E775008AAF10 /* MyDetailReviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailReviewRouter.swift; sourceTree = "<group>"; };
+		F0614E442BF9E775008AAF10 /* MyDetailReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailReviewViewController.swift; sourceTree = "<group>"; };
+		F0614E452BF9E775008AAF10 /* MyDetailReviewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailReviewBuilder.swift; sourceTree = "<group>"; };
+		F0614E462BF9E775008AAF10 /* MyDetailReviewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailReviewInteractor.swift; sourceTree = "<group>"; };
+		F0614E4B2BF9EA55008AAF10 /* MyDetailReviewViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailReviewViewHolder.swift; sourceTree = "<group>"; };
 		F0687BEC2A529679004B5EAE /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F068A96F2A99E76A000AFD52 /* FilterRenderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRenderable.swift; sourceTree = "<group>"; };
 		F069DBE52A30B9850001D3DD /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -1355,6 +1365,7 @@
 				BA87E3C72A45C579000A9DEC /* ProductDetail */,
 				B2538B8F2A3454FA00B7C3F0 /* ProfileHome */,
 				F0614E272BF9C8D4008AAF10 /* MyReview */,
+				F0614E422BF9E74D008AAF10 /* MyDetailReview */,
 				F075D0C32B052ED500DD0F5E /* ProfileEdit */,
 				B2538B8E2A3454F100B7C3F0 /* EventHome */,
 				B2538B8D2A3454EA00B7C3F0 /* ProductHome */,
@@ -1558,6 +1569,18 @@
 				F0614E402BF9DE43008AAF10 /* MyReviewContentConfiguration.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F0614E422BF9E74D008AAF10 /* MyDetailReview */ = {
+			isa = PBXGroup;
+			children = (
+				F0614E432BF9E775008AAF10 /* MyDetailReviewRouter.swift */,
+				F0614E442BF9E775008AAF10 /* MyDetailReviewViewController.swift */,
+				F0614E452BF9E775008AAF10 /* MyDetailReviewBuilder.swift */,
+				F0614E462BF9E775008AAF10 /* MyDetailReviewInteractor.swift */,
+				F0614E4B2BF9EA55008AAF10 /* MyDetailReviewViewHolder.swift */,
+			);
+			path = MyDetailReview;
 			sourceTree = "<group>";
 		};
 		F0687BEB2A529666004B5EAE /* Config */ = {
@@ -1954,6 +1977,7 @@
 				F0C698732A6D4DBF0019C677 /* TopCommonSectionLayout.swift in Sources */,
 				F097EF2E2A57187400A7FB9C /* ProfileUrl.swift in Sources */,
 				B21C1A8C2A513FBB007D98E9 /* RIBs+.swift in Sources */,
+				F0614E4C2BF9EA55008AAF10 /* MyDetailReviewViewHolder.swift in Sources */,
 				BA1807622A2F21D900295398 /* URLRequest+.swift in Sources */,
 				BA18C0B12A759EAC007D00BD /* ProductSearchSortBottomSheetViewController.swift in Sources */,
 				BA18C0922A753464007D00BD /* SearchFilterHeader+ViewHolder.swift in Sources */,
@@ -2116,6 +2140,10 @@
 				BA1807552A2F151F00295398 /* ImageAssetKind.swift in Sources */,
 				F06F40372B37361500897396 /* NativeAdView.swift in Sources */,
 				B22496522ABC1BE400BC6B09 /* ReviewPopupRouter.swift in Sources */,
+				F0614E472BF9E775008AAF10 /* MyDetailReviewRouter.swift in Sources */,
+				F0614E482BF9E775008AAF10 /* MyDetailReviewViewController.swift in Sources */,
+				F0614E492BF9E775008AAF10 /* MyDetailReviewBuilder.swift in Sources */,
+				F0614E4A2BF9E775008AAF10 /* MyDetailReviewInteractor.swift in Sources */,
 				F0168D512A500AC900978ED9 /* EventDetailRouter.swift in Sources */,
 				BAF8725D2AD404C0001427DF /* ProductGiftEntity.swift in Sources */,
 				BA87E3DC2A4623E3000A9DEC /* GiftItemEntity.swift in Sources */,

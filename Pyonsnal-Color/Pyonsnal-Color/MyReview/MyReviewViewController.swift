@@ -9,9 +9,8 @@ import ModernRIBs
 import UIKit
 
 protocol MyReviewPresentableListener: AnyObject {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+    func didTapBackButton()
+    func didTapMyDetailReview(with reviewId: String)
 }
 
 final class MyReviewViewController: UIViewController, MyReviewPresentable, MyReviewViewControllable {
@@ -24,6 +23,7 @@ final class MyReviewViewController: UIViewController, MyReviewPresentable, MyRev
         viewHolder.place(in: view)
         viewHolder.configureConstraints(for: view)
         self.configureUI()
+        self.bindActions()
         self.configureTableView()
     }
     
@@ -34,6 +34,10 @@ final class MyReviewViewController: UIViewController, MyReviewPresentable, MyRev
     // MARK: - Private Mehods
     private func configureUI() {
         self.view.backgroundColor = .white
+    }
+    
+    private func bindActions() {
+        self.viewHolder.backNavigationView.delegate = self
     }
     
     private func updateNavigationTitle(reviewCount: Int) {
@@ -54,7 +58,7 @@ final class MyReviewViewController: UIViewController, MyReviewPresentable, MyRev
 // MARK: - UITableViewDelegate
 extension MyReviewViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO: MyDetailReview
+        listener?.didTapMyDetailReview(with: "11")
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -70,6 +74,7 @@ extension MyReviewViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MyReviewContentView.identifier, for: indexPath)
+        cell.selectionStyle = .none // TODO: interactor로부터 받아온 값으로 변경
         cell.contentConfiguration = MyReviewContentConfiguration(
             storeImageIcon: .sevenEleven,
             imageUrl: "",
@@ -77,5 +82,12 @@ extension MyReviewViewController: UITableViewDataSource {
             date: "2024.05.19"
         )
         return cell
+    }
+}
+
+// MARK: - BackNavigationViewDelegate
+extension MyReviewViewController: BackNavigationViewDelegate {
+    func didTapBackButton() {
+        listener?.didTapBackButton()
     }
 }

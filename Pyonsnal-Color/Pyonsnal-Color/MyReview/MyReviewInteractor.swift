@@ -8,7 +8,8 @@
 import ModernRIBs
 
 protocol MyReviewRouting: ViewableRouting {
-    // TODO: Declare methods the interactor can invoke to manage sub-tree via the router.
+    func attachMyDetailReview()
+    func detachMyDetailReview()
 }
 
 protocol MyReviewPresentable: Presentable {
@@ -40,5 +41,13 @@ final class MyReviewInteractor: PresentableInteractor<MyReviewPresentable>, MyRe
     override func willResignActive() {
         super.willResignActive()
         // TODO: Pause any business logic.
+    }
+    
+    func didTapMyDetailReview(with reviewId: String) {
+        router?.attachMyDetailReview()
+    }
+    
+    func didTapBackButton() {
+        router?.detachMyDetailReview()
     }
 }

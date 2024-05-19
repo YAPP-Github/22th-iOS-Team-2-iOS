@@ -7,7 +7,8 @@
 
 import ModernRIBs
 
-protocol MyReviewInteractable: Interactable {
+protocol MyReviewInteractable: Interactable,
+                               MyDetailReviewListener {
     var router: MyReviewRouting? { get set }
     var listener: MyReviewListener? { get set }
 }
@@ -17,10 +18,34 @@ protocol MyReviewViewControllable: ViewControllable {
 }
 
 final class MyReviewRouter: ViewableRouter<MyReviewInteractable, MyReviewViewControllable>, MyReviewRouting {
+    
 
-    // TODO: Constructor inject child builder protocols to allow building children.
-    override init(interactor: MyReviewInteractable, viewController: MyReviewViewControllable) {
+    private let myDetailReviewBuilder: MyDetailReviewBuildable
+    private var myDetailReviewRouting: ViewableRouting?
+    
+    init(
+        interactor: MyReviewInteractable,
+        viewController: MyReviewViewControllable,
+        myDetailReviewBuilder: MyDetailReviewBuilder
+    ) {
+        self.myDetailReviewBuilder =  myDetailReviewBuilder
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
+    }
+    
+    func attachMyDetailReview() {
+        if myDetailReviewRouting != nil { return }
+        let myDetailReviewRouter = myDetailReviewBuilder.build(
+            withListener: interactor)
+        myDetailReviewRouting = myDetailReviewRouter
+        attachChild(myDetailReviewRouter)
+        viewController.pushViewController(myDetailReviewRouter.viewControllable, animated: true)
+    }
+    
+    func detachMyDetailReview() {
+        guard let myDetailReviewRouting else { return }
+        viewController.popViewController(animated: true)
+        self.myDetailReviewRouting = nil
+        detachChild(myDetailReviewRouting)
     }
 }

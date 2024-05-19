@@ -12,6 +12,7 @@ class ProductInfoStackView: UIStackView {
     enum Mode {
         case starRating
         case date
+        case taste
     }
     
     let productImageView: UIImageView = {
@@ -52,6 +53,13 @@ class ProductInfoStackView: UIStackView {
         return label
     }()
     
+    let tasteLabel: UILabel = {
+        let label = UILabel()
+        label.font = .body3r
+        label.textColor = .red500
+        return label
+    }()
+    
     init(mode: Mode) {
         super.init(frame: .zero)
         self.initialize()
@@ -87,6 +95,8 @@ class ProductInfoStackView: UIStackView {
             self.productInformationStackView.addArrangedSubview(starRatedView)
         case .date:
             self.productInformationStackView.addArrangedSubview(dateLabel)
+        case .taste:
+            self.productInformationStackView.addArrangedSubview(tasteLabel)
         }
         
         self.productImageView.snp.makeConstraints {
