@@ -11,6 +11,7 @@ protocol ProfileHomeInteractable: Interactable,
                                   ProfileEditListener,
                                   AccountSettingListener,
                                   CommonWebListener,
+                                  MyReviewListener,
                                   LoggedOutListener {
     var router: ProfileHomeRouting? { get set }
     var listener: ProfileHomeListener? { get set }
@@ -35,6 +36,9 @@ final class ProfileHomeRouter: ViewableRouter<ProfileHomeInteractable,
     private let accountSettingBuilder: AccountSettingBuildable
     private var accountSetting: ViewableRouting?
     
+    private let myReviewBuilder: MyReviewBuildable
+    private var myReviewRouting: ViewableRouting?
+    
     private let loggedOutBuilder: LoggedOutBuildable
     private var loggedOutRouting: ViewableRouting?
 
@@ -44,11 +48,13 @@ final class ProfileHomeRouter: ViewableRouter<ProfileHomeInteractable,
         profileEditBuilder: ProfileEditBuildable,
         accountSettingBuilder: AccountSettingBuildable,
         commonWebBuilder: CommonWebBuilder,
+        myReviewBuilder: MyReviewBuilder,
         loggedOutBuilder: LoggedOutBuilder
     ) {
         self.profileEditBuilder = profileEditBuilder
         self.accountSettingBuilder = accountSettingBuilder
         self.commonWebBuilder = commonWebBuilder
+        self.myReviewBuilder = myReviewBuilder
         self.loggedOutBuilder = loggedOutBuilder
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
@@ -105,6 +111,21 @@ final class ProfileHomeRouter: ViewableRouter<ProfileHomeInteractable,
         guard let commonWebRouting else { return }
         self.commonWebRouting = nil
         detachChild(commonWebRouting)
+        viewController.uiviewController.dismiss(animated: true)
+    }
+    
+    func attachMyReview() {
+        if myReviewRouting != nil { return }
+        let myReviewBuilder = myReviewBuilder.build(withListener: interactor)
+        self.myReviewRouting = myReviewBuilder
+        attachChild(myReviewBuilder)
+        viewController.pushViewController(myReviewBuilder.viewControllable, animated: true)
+    }
+    
+    func detachMyReview() {
+        guard let myReviewRouting else { return }
+        self.myReviewRouting = nil
+        detachChild(myReviewRouting)
         viewController.uiviewController.dismiss(animated: true)
     }
     

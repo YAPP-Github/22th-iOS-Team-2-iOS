@@ -14,6 +14,7 @@ final class ProfileHomeComponent: Component<ProfileHomeDependency>,
                                   ProfileEditDependency,
                                   AccountSettingDependency,
                                   CommonWebDependency,
+                                  MyReviewDependency,
                                   LoggedOutDependency {
     var appleLoginService: AppleLoginService
     var kakaoLoginService: KakaoLoginService
@@ -57,6 +58,7 @@ final class ProfileHomeBuilder: Builder<ProfileHomeDependency>,
         let profileEditBuilder = ProfileEditBuilder(dependency: component)
         let accountSettingBuilder = AccountSettingBuilder(dependency: component)
         let commonWebBuilder = CommonWebBuilder(dependency: component)
+        let myReviewBuilder = MyReviewBuilder(dependency: component)
         let loggedOutBuilder = LoggedOutBuilder(dependency: component)
         
         return ProfileHomeRouter(
@@ -65,6 +67,7 @@ final class ProfileHomeBuilder: Builder<ProfileHomeDependency>,
             profileEditBuilder: profileEditBuilder,
             accountSettingBuilder: accountSettingBuilder,
             commonWebBuilder: commonWebBuilder,
+            myReviewBuilder: myReviewBuilder,
             loggedOutBuilder: loggedOutBuilder
         )
     }

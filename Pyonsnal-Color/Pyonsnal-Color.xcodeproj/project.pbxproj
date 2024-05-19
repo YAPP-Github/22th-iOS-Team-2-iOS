@@ -261,6 +261,10 @@
 		F040E9D32A6D8E8800DF0C4A /* RefreshFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E9D22A6D8E8800DF0C4A /* RefreshFilterCell.swift */; };
 		F040E9D52A6D967300DF0C4A /* KeywordFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E9D42A6D967300DF0C4A /* KeywordFilterCell.swift */; };
 		F049E8C52A51CAE700E61199 /* ImageAssetKind+StoreTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049E8C42A51CAE700E61199 /* ImageAssetKind+StoreTag.swift */; };
+		F0614E2C2BF9C901008AAF10 /* MyReviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E282BF9C901008AAF10 /* MyReviewRouter.swift */; };
+		F0614E2D2BF9C901008AAF10 /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E292BF9C901008AAF10 /* MyReviewViewController.swift */; };
+		F0614E2E2BF9C901008AAF10 /* MyReviewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E2A2BF9C901008AAF10 /* MyReviewBuilder.swift */; };
+		F0614E2F2BF9C901008AAF10 /* MyReviewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E2B2BF9C901008AAF10 /* MyReviewInteractor.swift */; };
 		F0687BED2A529679004B5EAE /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0687BEC2A529679004B5EAE /* Config.swift */; };
 		F068A9702A99E76A000AFD52 /* FilterRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F068A96F2A99E76A000AFD52 /* FilterRenderable.swift */; };
 		F069DBE62A30B9850001D3DD /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069DBE52A30B9850001D3DD /* UIFont+.swift */; };
@@ -584,6 +588,10 @@
 		F040E9D22A6D8E8800DF0C4A /* RefreshFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshFilterCell.swift; sourceTree = "<group>"; };
 		F040E9D42A6D967300DF0C4A /* KeywordFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordFilterCell.swift; sourceTree = "<group>"; };
 		F049E8C42A51CAE700E61199 /* ImageAssetKind+StoreTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageAssetKind+StoreTag.swift"; sourceTree = "<group>"; };
+		F0614E282BF9C901008AAF10 /* MyReviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewRouter.swift; sourceTree = "<group>"; };
+		F0614E292BF9C901008AAF10 /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
+		F0614E2A2BF9C901008AAF10 /* MyReviewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewBuilder.swift; sourceTree = "<group>"; };
+		F0614E2B2BF9C901008AAF10 /* MyReviewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewInteractor.swift; sourceTree = "<group>"; };
 		F0687BEC2A529679004B5EAE /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F068A96F2A99E76A000AFD52 /* FilterRenderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRenderable.swift; sourceTree = "<group>"; };
 		F069DBE52A30B9850001D3DD /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -1334,6 +1342,7 @@
 				BA87E3DA2A4623D7000A9DEC /* Entity */,
 				BA87E3C72A45C579000A9DEC /* ProductDetail */,
 				B2538B8F2A3454FA00B7C3F0 /* ProfileHome */,
+				F0614E272BF9C8D4008AAF10 /* MyReview */,
 				F075D0C32B052ED500DD0F5E /* ProfileEdit */,
 				B2538B8E2A3454F100B7C3F0 /* EventHome */,
 				B2538B8D2A3454EA00B7C3F0 /* ProductHome */,
@@ -1515,6 +1524,17 @@
 				F0168D502A500AC900978ED9 /* EventDetailInteractor.swift */,
 			);
 			path = EventDetail;
+			sourceTree = "<group>";
+		};
+		F0614E272BF9C8D4008AAF10 /* MyReview */ = {
+			isa = PBXGroup;
+			children = (
+				F0614E282BF9C901008AAF10 /* MyReviewRouter.swift */,
+				F0614E292BF9C901008AAF10 /* MyReviewViewController.swift */,
+				F0614E2A2BF9C901008AAF10 /* MyReviewBuilder.swift */,
+				F0614E2B2BF9C901008AAF10 /* MyReviewInteractor.swift */,
+			);
+			path = MyReview;
 			sourceTree = "<group>";
 		};
 		F0687BEB2A529666004B5EAE /* Config */ = {
@@ -1973,6 +1993,10 @@
 				BA7532E22A595B140002659A /* UserAuthService.swift in Sources */,
 				F0E915D52AAC9E3F000919DA /* CommonProductPageViewControllerRenderable.swift in Sources */,
 				BA8924562A582EE700D1B097 /* NewTagBigView.swift in Sources */,
+				F0614E2C2BF9C901008AAF10 /* MyReviewRouter.swift in Sources */,
+				F0614E2D2BF9C901008AAF10 /* MyReviewViewController.swift in Sources */,
+				F0614E2E2BF9C901008AAF10 /* MyReviewBuilder.swift in Sources */,
+				F0614E2F2BF9C901008AAF10 /* MyReviewInteractor.swift in Sources */,
 				F075D0C82B052EF300DD0F5E /* ProfileEditRouter.swift in Sources */,
 				BA6CAB802AE84C6600B9E1BF /* UserInfoService.swift in Sources */,
 				BAE442C22A6D2C7A00BD6582 /* LoadingReusableView.swift in Sources */,
@@ -2490,7 +2514,7 @@
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 10.14.0;
+				minimumVersion = 11.2.0;
 			};
 		};
 		F0C9E0C62A7BF63600A53166 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
