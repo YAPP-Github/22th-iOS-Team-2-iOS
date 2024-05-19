@@ -268,6 +268,8 @@
 		F0614E312BF9D037008AAF10 /* ProfileHomeViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E302BF9D037008AAF10 /* ProfileHomeViewHolder.swift */; };
 		F0614E332BF9D2F8008AAF10 /* MyReviewViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E322BF9D2F8008AAF10 /* MyReviewViewHolder.swift */; };
 		F0614E352BF9D7D5008AAF10 /* ProductInfoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E342BF9D7D5008AAF10 /* ProductInfoStackView.swift */; };
+		F0614E3E2BF9DD01008AAF10 /* MyReviewContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E3D2BF9DD01008AAF10 /* MyReviewContentView.swift */; };
+		F0614E412BF9DE43008AAF10 /* MyReviewContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E402BF9DE43008AAF10 /* MyReviewContentConfiguration.swift */; };
 		F0687BED2A529679004B5EAE /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0687BEC2A529679004B5EAE /* Config.swift */; };
 		F068A9702A99E76A000AFD52 /* FilterRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F068A96F2A99E76A000AFD52 /* FilterRenderable.swift */; };
 		F069DBE62A30B9850001D3DD /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069DBE52A30B9850001D3DD /* UIFont+.swift */; };
@@ -598,6 +600,8 @@
 		F0614E302BF9D037008AAF10 /* ProfileHomeViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHomeViewHolder.swift; sourceTree = "<group>"; };
 		F0614E322BF9D2F8008AAF10 /* MyReviewViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewHolder.swift; sourceTree = "<group>"; };
 		F0614E342BF9D7D5008AAF10 /* ProductInfoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoStackView.swift; sourceTree = "<group>"; };
+		F0614E3D2BF9DD01008AAF10 /* MyReviewContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewContentView.swift; sourceTree = "<group>"; };
+		F0614E402BF9DE43008AAF10 /* MyReviewContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewContentConfiguration.swift; sourceTree = "<group>"; };
 		F0687BEC2A529679004B5EAE /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F068A96F2A99E76A000AFD52 /* FilterRenderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRenderable.swift; sourceTree = "<group>"; };
 		F069DBE52A30B9850001D3DD /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
@@ -1537,6 +1541,7 @@
 		F0614E272BF9C8D4008AAF10 /* MyReview */ = {
 			isa = PBXGroup;
 			children = (
+				F0614E3F2BF9DE2D008AAF10 /* View */,
 				F0614E282BF9C901008AAF10 /* MyReviewRouter.swift */,
 				F0614E292BF9C901008AAF10 /* MyReviewViewController.swift */,
 				F0614E2A2BF9C901008AAF10 /* MyReviewBuilder.swift */,
@@ -1544,6 +1549,15 @@
 				F0614E322BF9D2F8008AAF10 /* MyReviewViewHolder.swift */,
 			);
 			path = MyReview;
+			sourceTree = "<group>";
+		};
+		F0614E3F2BF9DE2D008AAF10 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0614E3D2BF9DD01008AAF10 /* MyReviewContentView.swift */,
+				F0614E402BF9DE43008AAF10 /* MyReviewContentConfiguration.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F0687BEB2A529666004B5EAE /* Config */ = {
@@ -2087,6 +2101,7 @@
 				BA6CAB822AE8509000B9E1BF /* ReviewLikeCountEntity.swift in Sources */,
 				F0D6FFAB2A39F89D00C55E27 /* UIView+.swift in Sources */,
 				F0C2B9F12AA4740000ACF3D7 /* EventHomeViewHolder.swift in Sources */,
+				F0614E3E2BF9DD01008AAF10 /* MyReviewContentView.swift in Sources */,
 				BAE984412AACFC3600ED22CB /* ProductDetailImageCell+ViewHolder.swift in Sources */,
 				B24259102A594862006C5223 /* SortEntity.swift in Sources */,
 				B24CAAE32A55AC2D005BE499 /* NotificationListBuilder.swift in Sources */,
@@ -2234,6 +2249,7 @@
 				B224965B2ABD8A7700BC6B09 /* UIImage+.swift in Sources */,
 				B28A59242A6FB2B200431F39 /* ProductFilterBuilder.swift in Sources */,
 				B2C25CDB2B65166E005C6F0D /* ProductType.swift in Sources */,
+				F0614E412BF9DE43008AAF10 /* MyReviewContentConfiguration.swift in Sources */,
 				F0DEABA02AAF410B00941A5F /* FavoriteHomeBuilder.swift in Sources */,
 				BA00B7392A46B8BF00BB3795 /* Spacing.swift in Sources */,
 				BA00B73C2A46B98700BB3795 /* SnapKit+.swift in Sources */,

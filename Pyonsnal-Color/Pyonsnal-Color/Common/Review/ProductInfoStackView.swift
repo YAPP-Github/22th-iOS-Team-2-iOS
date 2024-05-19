@@ -9,6 +9,11 @@ import UIKit
 import SnapKit
 
 class ProductInfoStackView: UIStackView {
+    enum Mode {
+        case starRating
+        case date
+    }
+    
     let productImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.makeBorder(width: 1, color: UIColor.gray200.cgColor)
@@ -40,10 +45,17 @@ class ProductInfoStackView: UIStackView {
     
     let starRatedView = StarRatedView(score: 0)
     
-    override init(frame: CGRect) {
+    let dateLabel: UILabel = {
+        let label = UILabel()
+        label.font = .body3r
+        label.textColor = .gray400
+        return label
+    }()
+    
+    init(mode: Mode) {
         super.init(frame: .zero)
         self.initialize()
-        self.configureView()
+        self.configureView(with: mode)
     }
     
     required init(coder: NSCoder) {
@@ -63,13 +75,19 @@ class ProductInfoStackView: UIStackView {
         )
     }
     
-    private func configureView() {
+    private func configureView(with mode: Mode) {
         self.addArrangedSubview(productImageView)
         self.addArrangedSubview(productInformationStackView)
         
         self.productInformationStackView.addArrangedSubview(storeImageView)
         self.productInformationStackView.addArrangedSubview(productNameLabel)
-        self.productInformationStackView.addArrangedSubview(starRatedView)
+        
+        switch mode {
+        case .starRating:
+            self.productInformationStackView.addArrangedSubview(starRatedView)
+        case .date:
+            self.productInformationStackView.addArrangedSubview(dateLabel)
+        }
         
         self.productImageView.snp.makeConstraints {
             $0.width.height.equalTo(100)

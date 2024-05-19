@@ -24,7 +24,7 @@ extension MyReviewViewController {
             let tableView = UITableView()
             return tableView
         }()
-        
+            
         func place(in view: UIView) {
             view.addSubview(backNavigationView)
             view.addSubview(tableView)

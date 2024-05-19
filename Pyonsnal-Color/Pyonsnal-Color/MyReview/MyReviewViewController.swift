@@ -23,14 +23,59 @@ final class MyReviewViewController: UIViewController, MyReviewPresentable, MyRev
         super.viewDidLoad()
         viewHolder.place(in: view)
         viewHolder.configureConstraints(for: view)
+        self.configureUI()
+        self.configureTableView()
     }
     
     func update(reviews: [ReviewEntity]) {
         self.updateNavigationTitle(reviewCount: reviews.count)
     }
     
+    // MARK: - Private Mehods
+    private func configureUI() {
+        self.view.backgroundColor = .white
+    }
+    
     private func updateNavigationTitle(reviewCount: Int) {
         let updatedTitle = Text.navigationTitleView + "(\(reviewCount))"
         self.viewHolder.backNavigationView.setText(with: updatedTitle)
+    }
+    
+    private func configureTableView() {
+        self.viewHolder.tableView.register(
+            UITableViewCell.self,
+            forCellReuseIdentifier: MyReviewContentView.identifier
+        )
+        self.viewHolder.tableView.delegate = self
+        self.viewHolder.tableView.dataSource = self
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension MyReviewViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // TODO: MyDetailReview
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension MyReviewViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10 // TODO: interactor로부터 받아온 값으로 변경
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: MyReviewContentView.identifier, for: indexPath)
+        cell.contentConfiguration = MyReviewContentConfiguration(
+            storeImageIcon: .sevenEleven,
+            imageUrl: "",
+            title: "테스트",
+            date: "2024.05.19"
+        )
+        return cell
     }
 }

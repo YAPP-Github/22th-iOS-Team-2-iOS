@@ -49,7 +49,7 @@ extension DetailReviewViewController {
         }()
         
         let productInfoStackView: ProductInfoStackView = {
-            let infoStackView = ProductInfoStackView()
+            let infoStackView = ProductInfoStackView(mode: .starRating)
             return infoStackView
         }()
         
