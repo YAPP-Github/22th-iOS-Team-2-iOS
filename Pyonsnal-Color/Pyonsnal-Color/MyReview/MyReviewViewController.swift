@@ -17,4 +17,20 @@ protocol MyReviewPresentableListener: AnyObject {
 final class MyReviewViewController: UIViewController, MyReviewPresentable, MyReviewViewControllable {
 
     weak var listener: MyReviewPresentableListener?
+    var viewHolder: MyReviewViewController.ViewHolder = .init()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        viewHolder.place(in: view)
+        viewHolder.configureConstraints(for: view)
+    }
+    
+    func update(reviews: [ReviewEntity]) {
+        self.updateNavigationTitle(reviewCount: reviews.count)
+    }
+    
+    private func updateNavigationTitle(reviewCount: Int) {
+        let updatedTitle = Text.navigationTitleView + "(\(reviewCount))"
+        self.viewHolder.backNavigationView.setText(with: updatedTitle)
+    }
 }

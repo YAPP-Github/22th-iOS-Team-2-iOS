@@ -69,8 +69,8 @@ final class DetailReviewViewController: UIViewController,
     private func configureView() {
         view.backgroundColor = .white
         viewHolder.detailReviewTextView.text = Constant.textViewPlaceholder
-        viewHolder.productImageView.setImage(with: productDetail.imageURL)
-        viewHolder.productNameLabel.text = productDetail.name
+        viewHolder.productInfoStackView.productImageView.setImage(with: productDetail.imageURL)
+        viewHolder.productInfoStackView.productNameLabel.text = productDetail.name
         setResizedStoreIcon(productDetail.storeType.storeIcon.image)
         updateStarRatedView(score: score)
         viewHolder.totalScrollView.addTapGesture(
@@ -167,16 +167,16 @@ final class DetailReviewViewController: UIViewController,
     }
     
     private func updateStarRatedView(score: Int) {
-        viewHolder.starRatedView.updateScore(to: Double(score))
+        viewHolder.productInfoStackView.starRatedView.updateScore(to: Double(score))
     }
     
     private func setResizedStoreIcon(_ image: UIImage?) {
-        viewHolder.storeImageView.image = image
+        viewHolder.productInfoStackView.storeImageView.image = image
         if let storeIcon = image {
             let ratio = storeIcon.size.width / storeIcon.size.height
             let newWidth = Constant.storeIconHeight * ratio
             
-            viewHolder.storeImageView.snp.makeConstraints {
+            viewHolder.productInfoStackView.storeImageView.snp.makeConstraints {
                 $0.width.equalTo(newWidth)
             }
         }
