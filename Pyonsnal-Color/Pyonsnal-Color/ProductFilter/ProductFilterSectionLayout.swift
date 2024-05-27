@@ -13,6 +13,7 @@ final class ProductFilterSectionLayout {
         static let sortCellHeight: CGFloat = 40
         static let eventCellHeight: CGFloat = 40
         static let categoryCellHeight: CGFloat = 108
+        static let userTasteCellHeight: CGFloat = 108
     }
     
     private func createSortSection() -> NSCollectionLayoutSection {
@@ -100,6 +101,30 @@ final class ProductFilterSectionLayout {
         let section = NSCollectionLayoutSection(group: group)
         return section
     }
+    
+    private func createUserTasteSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.33),
+            heightDimension: .fractionalHeight(1)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .estimated(Size.userTasteCellHeight)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitem: item,
+            count: 3
+        )
+        group.interItemSpacing = .fixed(.spacing24)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.interGroupSpacing = .spacing20
+        
+        return section
+    }
 }
 
 extension ProductFilterSectionLayout {
@@ -111,6 +136,7 @@ extension ProductFilterSectionLayout {
             return createEventSection()
         case .category, .recommend:
             return createCategorySection()
+        // TODO: 상품 취향 필터 추가 예정
         case .unknown:
             return nil
         }

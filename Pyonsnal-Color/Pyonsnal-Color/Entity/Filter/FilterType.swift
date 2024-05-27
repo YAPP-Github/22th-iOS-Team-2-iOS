@@ -12,6 +12,7 @@ enum FilterType: Decodable {
     case recommend // 상품 추천
     case category // 카테고리
     case event // 행사
+    // TODO: 상품 취향 필터 추가 예정
     case unknown
     
     init(from decoder: Decoder) throws {
