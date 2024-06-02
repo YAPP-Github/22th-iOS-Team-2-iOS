@@ -111,6 +111,10 @@ extension ProductDetailReviewCell {
                 make.leading.trailing.equalToSuperview().inset(.spacing16)
             }
             
+            reviewTagListView.snp.makeConstraints { make in
+                make.height.equalTo(28)
+            }
+            
             reviewLabel.snp.makeConstraints { make in
                 make.top.equalTo(contentStackView.snp.bottom).offset(.spacing12)
                 make.leading.trailing.equalToSuperview().inset(.spacing20)

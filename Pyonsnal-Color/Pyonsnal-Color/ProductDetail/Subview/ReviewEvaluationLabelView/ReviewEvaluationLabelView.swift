@@ -81,7 +81,6 @@ final class ReviewEvaluationLabelView: UIView {
         contentStackView.addArrangedSubview(evaluationLabel)
         
         contentView.snp.makeConstraints { make in
-            make.height.equalTo(28)
             make.edges.equalToSuperview()
         }
         
@@ -91,12 +90,10 @@ final class ReviewEvaluationLabelView: UIView {
         }
         
         categoryLabel.snp.makeConstraints { make in
-            make.height.equalTo(20)
             make.top.bottom.equalToSuperview()
         }
         
         evaluationLabel.snp.makeConstraints { make in
-            make.height.equalTo(20)
             make.top.bottom.equalToSuperview()
         }
     }

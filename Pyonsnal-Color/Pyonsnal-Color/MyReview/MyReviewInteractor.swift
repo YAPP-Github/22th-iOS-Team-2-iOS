@@ -8,7 +8,7 @@
 import ModernRIBs
 
 protocol MyReviewRouting: ViewableRouting {
-    func attachMyDetailReview()
+    func attachMyDetailReview(productDetail: ProductDetailEntity, review: ReviewEntity)
     func detachMyDetailReview()
 }
 
@@ -43,8 +43,10 @@ final class MyReviewInteractor: PresentableInteractor<MyReviewPresentable>, MyRe
         // TODO: Pause any business logic.
     }
     
-    func didTapMyDetailReview(with reviewId: String) {
-        router?.attachMyDetailReview()
+    func didTapMyDetailReview(with productDetail: ProductDetailEntity, reviewId: String) {
+        // TODO: 받아온 값으로 수정
+//        guard let review = productDetail.reviews.first(where: { $0.reviewId == reviewId }) else { return }
+        router?.attachMyDetailReview(productDetail: productDetail, review: .init(reviewId: "", taste: .good, quality: .bad, valueForMoney: .normal, score: 0, contents: "", image: nil, writerId: nil, writerName: "", createdTime: "", updatedTime: "", likeCount: .init(writerIds: [], likeCount: 0), hateCount: .init(writerIds: [], hateCount: 0)))
     }
     
     func didTapBackButton() {

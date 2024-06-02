@@ -33,10 +33,13 @@ final class MyReviewRouter: ViewableRouter<MyReviewInteractable, MyReviewViewCon
         interactor.router = self
     }
     
-    func attachMyDetailReview() {
+    func attachMyDetailReview(productDetail: ProductDetailEntity, review: ReviewEntity) {
         if myDetailReviewRouting != nil { return }
         let myDetailReviewRouter = myDetailReviewBuilder.build(
-            withListener: interactor)
+            withListener: interactor,
+            productDetail: productDetail,
+            review: review
+        )
         myDetailReviewRouting = myDetailReviewRouter
         attachChild(myDetailReviewRouter)
         viewController.pushViewController(myDetailReviewRouter.viewControllable, animated: true)

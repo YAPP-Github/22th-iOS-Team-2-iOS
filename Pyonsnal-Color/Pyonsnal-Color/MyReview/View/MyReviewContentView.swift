@@ -36,12 +36,8 @@ class MyReviewContentView: UIView, UIContentView {
     
     private func configureUI() {
         guard let configuration = configuration as? MyReviewContentConfiguration else { return }
-        if let imageUrl = URL(string: configuration.imageUrl) {
-            self.productInfoStackView.productImageView.setImage(with: imageUrl)
-        }
-        
+        self.productInfoStackView.productImageView.setImage(with: configuration.imageUrl)
         self.productInfoStackView.productNameLabel.text = configuration.title
-        
         self.productInfoStackView.storeImageView.setImage(configuration.storeImageIcon.storeIcon)
         self.productInfoStackView.storeImageView.snp.makeConstraints { make in
             guard let storeIcon = configuration.storeImageIcon.storeIcon.image else { return }

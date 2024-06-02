@@ -26,23 +26,15 @@ extension MyDetailReviewViewController {
             return navigationView
         }()
         
-        let productInfoStackView: ProductInfoStackView = {
-            let infoStackView = ProductInfoStackView(mode: .taste)
-            return infoStackView
+        let collectionView: UICollectionView = {
+            let layout = UICollectionViewFlowLayout()
+            layout.scrollDirection = .vertical
+            return UICollectionView(frame: .zero, collectionViewLayout: layout)
         }()
         
-        let dividerView: UIView = {
-            let view = UIView()
-            view.backgroundColor = .gray200
-            return view
-        }()
-        
-        // TODO: 아무래도 scrollView ..??
-        // TODO: productDetailReviewCell
         func place(in view: UIView) {
             view.addSubview(backNavigationView)
-            view.addSubview(productInfoStackView)
-            view.addSubview(dividerView)
+            view.addSubview(collectionView)
         }
         
         func configureConstraints(for view: UIView) {
@@ -51,16 +43,10 @@ extension MyDetailReviewViewController {
                 $0.leading.trailing.equalTo(view)
             }
             
-            productInfoStackView.snp.makeConstraints {
+            collectionView.snp.makeConstraints {
                 $0.top.equalTo(backNavigationView.snp.bottom)
                 $0.leading.trailing.equalToSuperview()
-                $0.height.equalTo(Size.dividerHeight)
-            }
-            
-            dividerView.snp.makeConstraints {
-                $0.leading.equalToSuperview().offset(.spacing24)
-                $0.trailing.equalToSuperview().inset(.spacing24)
-                $0.height.equalTo(Size.dividerHeight)
+                $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             }
         }
     }

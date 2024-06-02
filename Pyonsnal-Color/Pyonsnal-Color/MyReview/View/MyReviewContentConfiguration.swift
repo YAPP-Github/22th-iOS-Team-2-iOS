@@ -9,11 +9,11 @@ import UIKit
 
 struct MyReviewContentConfiguration: UIContentConfiguration {
     var storeImageIcon: ConvenienceStore
-    var imageUrl: String
+    var imageUrl: URL
     var title: String
     var date: String?
     
-    init(storeImageIcon: ConvenienceStore, imageUrl: String, title: String, date: String? = nil) {
+    init(storeImageIcon: ConvenienceStore, imageUrl: URL, title: String, date: String? = nil) {
         self.storeImageIcon = storeImageIcon
         self.imageUrl = imageUrl
         self.title = title

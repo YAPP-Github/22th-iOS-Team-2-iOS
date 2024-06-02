@@ -13,14 +13,24 @@ protocol MyDetailReviewDependency: Dependency {
 }
 
 final class MyDetailReviewComponent: Component<MyDetailReviewDependency> {
-
-    // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
+    var productDetail: ProductDetailEntity
+    var review: ReviewEntity
+    
+    init(dependency: MyDetailReviewDependency, productDetail: ProductDetailEntity, review: ReviewEntity) {
+        self.productDetail = productDetail
+        self.review = review
+        super.init(dependency: dependency)
+    }
 }
 
 // MARK: - Builder
 
 protocol MyDetailReviewBuildable: Buildable {
-    func build(withListener listener: MyDetailReviewListener) -> MyDetailReviewRouting
+    func build(
+        withListener listener: MyDetailReviewListener,
+        productDetail: ProductDetailEntity,
+        review: ReviewEntity
+    ) -> MyDetailReviewRouting
 }
 
 final class MyDetailReviewBuilder: Builder<MyDetailReviewDependency>, MyDetailReviewBuildable {
@@ -29,10 +39,14 @@ final class MyDetailReviewBuilder: Builder<MyDetailReviewDependency>, MyDetailRe
         super.init(dependency: dependency)
     }
 
-    func build(withListener listener: MyDetailReviewListener) -> MyDetailReviewRouting {
-        let component = MyDetailReviewComponent(dependency: dependency)
+    func build(
+        withListener listener: MyDetailReviewListener,
+        productDetail: ProductDetailEntity,
+        review: ReviewEntity
+    ) -> MyDetailReviewRouting {
+        let component = MyDetailReviewComponent(dependency: dependency, productDetail: productDetail, review: review)
         let viewController = MyDetailReviewViewController()
-        let interactor = MyDetailReviewInteractor(presenter: viewController)
+        let interactor = MyDetailReviewInteractor(presenter: viewController, component: component)
         interactor.listener = listener
         return MyDetailReviewRouter(interactor: interactor, viewController: viewController)
     }

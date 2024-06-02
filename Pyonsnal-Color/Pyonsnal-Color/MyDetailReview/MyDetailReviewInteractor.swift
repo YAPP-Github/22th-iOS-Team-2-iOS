@@ -13,7 +13,7 @@ protocol MyDetailReviewRouting: ViewableRouting {
 
 protocol MyDetailReviewPresentable: Presentable {
     var listener: MyDetailReviewPresentableListener? { get set }
-    // TODO: Declare methods the interactor can invoke the presenter to present data.
+    func update(with productDetail: ProductDetailEntity, review: ReviewEntity)
 }
 
 protocol MyDetailReviewListener: AnyObject {
@@ -24,16 +24,20 @@ final class MyDetailReviewInteractor: PresentableInteractor<MyDetailReviewPresen
 
     weak var router: MyDetailReviewRouting?
     weak var listener: MyDetailReviewListener?
-
-    // TODO: Add additional dependencies to constructor. Do not perform any logic
-    // in constructor.
-    override init(presenter: MyDetailReviewPresentable) {
+    private let component: MyDetailReviewComponent
+    
+    init(
+        presenter: MyDetailReviewPresentable,
+        component: MyDetailReviewComponent
+    ) {
+        self.component = component
         super.init(presenter: presenter)
         presenter.listener = self
     }
 
     override func didBecomeActive() {
         super.didBecomeActive()
+        self.presenter.update(with: component.productDetail, review: component.review)
     }
 
     override func willResignActive() {
