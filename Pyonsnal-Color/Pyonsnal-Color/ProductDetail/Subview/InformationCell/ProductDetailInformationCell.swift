@@ -49,6 +49,9 @@ final class ProductDetailInformationCell: UICollectionViewCell {
             return
         }
         
+        // TODO: if let has tastesTags
+        setTastesTag()
+        
         if let gift = payload.productDetail.gift {
             viewHolder.giftInformationView.isHidden = false
             viewHolder.productDescriptionLabel.snp.remakeConstraints { make in
@@ -83,5 +86,16 @@ final class ProductDetailInformationCell: UICollectionViewCell {
         viewHolder.productNameLabel.text = productDetail.name
         viewHolder.productPriceLabel.text = productDetail.price
         viewHolder.productDescriptionLabel.text = productDetail.description
+    }
+    
+    private func setTastesTag() {
+        viewHolder.productTastesTagStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        
+        let tagList = ["카페인러버", "헬창", "캐릭터컬렉터", "카페인러버", "헬창", "캐릭터컬렉터"]
+        tagList.map { "# \($0)" }
+            .forEach { tagText in
+                let tastesTagView = ProductTastesTagView(text: tagText)
+                viewHolder.productTastesTagStackView.addArrangedSubview(tastesTagView)
+            }
     }
 }

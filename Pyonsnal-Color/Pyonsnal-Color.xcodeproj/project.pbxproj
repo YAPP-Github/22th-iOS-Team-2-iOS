@@ -278,6 +278,7 @@
 		F0687BED2A529679004B5EAE /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0687BEC2A529679004B5EAE /* Config.swift */; };
 		F068A9702A99E76A000AFD52 /* FilterRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F068A96F2A99E76A000AFD52 /* FilterRenderable.swift */; };
 		F069DBE62A30B9850001D3DD /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069DBE52A30B9850001D3DD /* UIFont+.swift */; };
+		F06E3DA32C0C76F900D6C195 /* ProductTastesTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E3DA22C0C76F900D6C195 /* ProductTastesTagView.swift */; };
 		F06E3D982C0C428D00D6C195 /* ActionButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E3D972C0C428D00D6C195 /* ActionButtonCell.swift */; };
 		F06F40292B35E2FC00897396 /* AdMobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06F40282B35E2FC00897396 /* AdMobManager.swift */; };
 		F06F40322B35EE2800897396 /* CurationAdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06F40312B35EE2800897396 /* CurationAdCell.swift */; };
@@ -620,6 +621,7 @@
 		F069DBE92A30BA8C0001D3DD /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		F069DBEA2A30BA8C0001D3DD /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		F06E3D972C0C428D00D6C195 /* ActionButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonCell.swift; sourceTree = "<group>"; };
+		F06E3DA22C0C76F900D6C195 /* ProductTastesTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTastesTagView.swift; sourceTree = "<group>"; };
 		F06F40282B35E2FC00897396 /* AdMobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobManager.swift; sourceTree = "<group>"; };
 		F06F40312B35EE2800897396 /* CurationAdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurationAdCell.swift; sourceTree = "<group>"; };
 		F06F40362B37361500897396 /* NativeAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAdView.swift; sourceTree = "<group>"; };
@@ -1305,6 +1307,7 @@
 				BA87E3DF2A462AD9000A9DEC /* ProductTagListView.swift */,
 				BA87E3D42A45D400000A9DEC /* GiftItemView.swift */,
 				BA87E3D62A45D40A000A9DEC /* GiftInformationView.swift */,
+				F06E3DA22C0C76F900D6C195 /* ProductTastesTagView.swift */,
 			);
 			path = ProductDetail;
 			sourceTree = "<group>";
@@ -2223,6 +2226,7 @@
 				B2F258192AAF03160022013E /* DetailReviewInteractor.swift in Sources */,
 				B2EECB772B6A896600B328C1 /* LoginPopupViewHolder.swift in Sources */,
 				F0A8A3B02A70053D00601DAE /* FilterType.swift in Sources */,
+				F06E3DA32C0C76F900D6C195 /* ProductTastesTagView.swift in Sources */,
 				F06F40322B35EE2800897396 /* CurationAdCell.swift in Sources */,
 				BA87E3D72A45D40A000A9DEC /* GiftInformationView.swift in Sources */,
 				F0B90DCC2ADD2167005DE34A /* FavoriteHomePageViewController.swift in Sources */,

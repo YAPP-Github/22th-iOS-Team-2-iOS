@@ -69,6 +69,13 @@ extension ProductDetailInformationCell {
             return label
         }()
         
+        let productTastesTagStackView: UIStackView = {
+            let stackView = UIStackView()
+            stackView.axis = .horizontal
+            stackView.spacing = .spacing4
+            return stackView
+        }()
+        
         let giftInformationView: GiftInformationView = {
             let giftInformationView: GiftInformationView = .init()
             return giftInformationView
@@ -87,6 +94,7 @@ extension ProductDetailInformationCell {
             textContainerView.addSubview(productNameLabel)
             textContainerView.addSubview(productPriceLabel)
             textContainerView.addSubview(productDescriptionLabel)
+            textContainerView.addSubview(productTastesTagStackView)
             textContainerView.addSubview(giftInformationView)
         }
         
@@ -120,8 +128,13 @@ extension ProductDetailInformationCell {
                 make.leading.trailing.equalToSuperview()
             }
             
+            productTastesTagStackView.snp.makeConstraints { make in
+                make.top.equalTo(productDescriptionLabel.snp.bottom).offset(.spacing16)
+                make.leading.trailing.equalToSuperview()
+            }
+            
             giftInformationView.snp.makeConstraints { make in
-                make.top.equalTo(productDescriptionLabel.snp.bottom).offset(.spacing40)
+                make.top.equalTo(productTastesTagStackView.snp.bottom).offset(.spacing40)
                 make.leading.trailing.equalToSuperview()
                 make.bottom.equalToSuperview()
             }
