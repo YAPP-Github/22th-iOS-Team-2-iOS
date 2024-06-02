@@ -38,7 +38,7 @@ protocol ProfileHomeListener: AnyObject {
 final class ProfileHomeInteractor: PresentableInteractor<ProfileHomePresentable>,
                                    ProfileHomeInteractable,
                                    ProfileHomePresentableListener {
-    
+
     weak var router: ProfileHomeRouting?
     weak var listener: ProfileHomeListener?
     private var cancellable = Set<AnyCancellable>()
