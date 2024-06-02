@@ -18,6 +18,9 @@ protocol ProfileHomeRouting: ViewableRouting {
     func attachAccountSetting()
     func detachAccountSetting()
     
+    func attachMyReview()
+    func detachMyReview()
+    
     func attachLoggedOut()
     func detachLoggedOut()
 }
@@ -67,6 +70,10 @@ final class ProfileHomeInteractor: PresentableInteractor<ProfileHomePresentable>
             }.store(in: &cancellable)
     }
     
+    func didTapMyReview() {
+        router?.attachMyReview()
+    }
+    
     func didTapAccountSetting() {
         router?.attachAccountSetting()
     }
@@ -109,6 +116,10 @@ final class ProfileHomeInteractor: PresentableInteractor<ProfileHomePresentable>
     
     func detachLoggedOut() {
         router?.detachLoggedOut()
+    }
+    
+    func detachMyReview() {
+        router?.detachMyReview()
     }
     
 }

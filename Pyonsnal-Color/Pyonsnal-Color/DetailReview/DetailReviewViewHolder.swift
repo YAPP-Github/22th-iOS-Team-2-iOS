@@ -48,51 +48,10 @@ extension DetailReviewViewController {
             return stackView
         }()
         
-        private let productTotalStackView: UIStackView = {
-            let stackView = UIStackView()
-            stackView.axis = .horizontal
-            stackView.alignment = .center
-            stackView.spacing = .spacing16
-            stackView.isLayoutMarginsRelativeArrangement = true
-            stackView.layoutMargins = .init(
-                top: .spacing24,
-                left: .spacing16,
-                bottom: .spacing24,
-                right: 0
-            )
-            return stackView
+        let productInfoStackView: ProductInfoStackView = {
+            let infoStackView = ProductInfoStackView(mode: .starRating)
+            return infoStackView
         }()
-        
-        let productImageView: UIImageView = {
-            let imageView = UIImageView()
-            imageView.makeBorder(width: 1, color: UIColor.gray200.cgColor)
-            imageView.makeRounded(with: .spacing16)
-            return imageView
-        }()
-        
-        private let productInformationStackView: UIStackView = {
-            let stackView = UIStackView()
-            stackView.axis = .vertical
-            stackView.spacing = .spacing8
-            stackView.alignment = .leading
-            stackView.distribution = .equalSpacing
-            return stackView
-        }()
-        
-        let storeImageView: UIImageView = {
-            let imageView = UIImageView()
-            imageView.contentMode = .scaleAspectFit
-            return imageView
-        }()
-        
-        let productNameLabel: UILabel = {
-            let label = UILabel()
-            label.font = .body3m
-            label.numberOfLines = 1
-            return label
-        }()
-        
-        let starRatedView = StarRatedView(score: 0)
         
         private let separatorView: UIView = {
             let view = UIView()
@@ -225,18 +184,11 @@ extension DetailReviewViewController {
             
             applyButtonBackgroundView.addSubview(applyReviewButton)
             
-            contentStackView.addArrangedSubview(productTotalStackView)
+            contentStackView.addArrangedSubview(productInfoStackView)
             contentStackView.addArrangedSubview(separatorView)
             contentStackView.addArrangedSubview(reviewButtonStackView)
             contentStackView.addArrangedSubview(detailReviewStackView)
             contentStackView.addArrangedSubview(imageUploadStackView)
-            
-            productTotalStackView.addArrangedSubview(productImageView)
-            productTotalStackView.addArrangedSubview(productInformationStackView)
-            
-            productInformationStackView.addArrangedSubview(storeImageView)
-            productInformationStackView.addArrangedSubview(productNameLabel)
-            productInformationStackView.addArrangedSubview(starRatedView)
             
             reviewButtonStackView.addArrangedSubview(tasteReview)
             reviewButtonStackView.addArrangedSubview(qualityReview)
@@ -281,21 +233,13 @@ extension DetailReviewViewController {
                 $0.height.equalToSuperview()
             }
             
-            productTotalStackView.snp.makeConstraints {
+            productInfoStackView.snp.makeConstraints {
                 $0.leading.top.trailing.equalToSuperview()
-            }
-            
-            productImageView.snp.makeConstraints {
-                $0.width.height.equalTo(100)
-            }
-            
-            storeImageView.snp.makeConstraints {
-                $0.height.equalTo(20)
             }
             
             separatorView.snp.makeConstraints {
                 $0.leading.trailing.equalToSuperview()
-                $0.top.equalTo(productTotalStackView.snp.bottom)
+                $0.top.equalTo(productInfoStackView.snp.bottom)
                 $0.height.equalTo(12)
             }
             

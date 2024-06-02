@@ -261,9 +261,24 @@
 		F040E9D32A6D8E8800DF0C4A /* RefreshFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E9D22A6D8E8800DF0C4A /* RefreshFilterCell.swift */; };
 		F040E9D52A6D967300DF0C4A /* KeywordFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F040E9D42A6D967300DF0C4A /* KeywordFilterCell.swift */; };
 		F049E8C52A51CAE700E61199 /* ImageAssetKind+StoreTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049E8C42A51CAE700E61199 /* ImageAssetKind+StoreTag.swift */; };
+		F0614E2C2BF9C901008AAF10 /* MyReviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E282BF9C901008AAF10 /* MyReviewRouter.swift */; };
+		F0614E2D2BF9C901008AAF10 /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E292BF9C901008AAF10 /* MyReviewViewController.swift */; };
+		F0614E2E2BF9C901008AAF10 /* MyReviewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E2A2BF9C901008AAF10 /* MyReviewBuilder.swift */; };
+		F0614E2F2BF9C901008AAF10 /* MyReviewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E2B2BF9C901008AAF10 /* MyReviewInteractor.swift */; };
+		F0614E312BF9D037008AAF10 /* ProfileHomeViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E302BF9D037008AAF10 /* ProfileHomeViewHolder.swift */; };
+		F0614E332BF9D2F8008AAF10 /* MyReviewViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E322BF9D2F8008AAF10 /* MyReviewViewHolder.swift */; };
+		F0614E352BF9D7D5008AAF10 /* ProductInfoStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E342BF9D7D5008AAF10 /* ProductInfoStackView.swift */; };
+		F0614E3E2BF9DD01008AAF10 /* MyReviewContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E3D2BF9DD01008AAF10 /* MyReviewContentView.swift */; };
+		F0614E412BF9DE43008AAF10 /* MyReviewContentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E402BF9DE43008AAF10 /* MyReviewContentConfiguration.swift */; };
+		F0614E472BF9E775008AAF10 /* MyDetailReviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E432BF9E775008AAF10 /* MyDetailReviewRouter.swift */; };
+		F0614E482BF9E775008AAF10 /* MyDetailReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E442BF9E775008AAF10 /* MyDetailReviewViewController.swift */; };
+		F0614E492BF9E775008AAF10 /* MyDetailReviewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E452BF9E775008AAF10 /* MyDetailReviewBuilder.swift */; };
+		F0614E4A2BF9E775008AAF10 /* MyDetailReviewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E462BF9E775008AAF10 /* MyDetailReviewInteractor.swift */; };
+		F0614E4C2BF9EA55008AAF10 /* MyDetailReviewViewHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0614E4B2BF9EA55008AAF10 /* MyDetailReviewViewHolder.swift */; };
 		F0687BED2A529679004B5EAE /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0687BEC2A529679004B5EAE /* Config.swift */; };
 		F068A9702A99E76A000AFD52 /* FilterRenderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F068A96F2A99E76A000AFD52 /* FilterRenderable.swift */; };
 		F069DBE62A30B9850001D3DD /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F069DBE52A30B9850001D3DD /* UIFont+.swift */; };
+		F06E3D982C0C428D00D6C195 /* ActionButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06E3D972C0C428D00D6C195 /* ActionButtonCell.swift */; };
 		F06F40292B35E2FC00897396 /* AdMobManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06F40282B35E2FC00897396 /* AdMobManager.swift */; };
 		F06F40322B35EE2800897396 /* CurationAdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06F40312B35EE2800897396 /* CurationAdCell.swift */; };
 		F06F40372B37361500897396 /* NativeAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06F40362B37361500897396 /* NativeAdView.swift */; };
@@ -584,12 +599,27 @@
 		F040E9D22A6D8E8800DF0C4A /* RefreshFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshFilterCell.swift; sourceTree = "<group>"; };
 		F040E9D42A6D967300DF0C4A /* KeywordFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordFilterCell.swift; sourceTree = "<group>"; };
 		F049E8C42A51CAE700E61199 /* ImageAssetKind+StoreTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageAssetKind+StoreTag.swift"; sourceTree = "<group>"; };
+		F0614E282BF9C901008AAF10 /* MyReviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewRouter.swift; sourceTree = "<group>"; };
+		F0614E292BF9C901008AAF10 /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
+		F0614E2A2BF9C901008AAF10 /* MyReviewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewBuilder.swift; sourceTree = "<group>"; };
+		F0614E2B2BF9C901008AAF10 /* MyReviewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewInteractor.swift; sourceTree = "<group>"; };
+		F0614E302BF9D037008AAF10 /* ProfileHomeViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHomeViewHolder.swift; sourceTree = "<group>"; };
+		F0614E322BF9D2F8008AAF10 /* MyReviewViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewHolder.swift; sourceTree = "<group>"; };
+		F0614E342BF9D7D5008AAF10 /* ProductInfoStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoStackView.swift; sourceTree = "<group>"; };
+		F0614E3D2BF9DD01008AAF10 /* MyReviewContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewContentView.swift; sourceTree = "<group>"; };
+		F0614E402BF9DE43008AAF10 /* MyReviewContentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewContentConfiguration.swift; sourceTree = "<group>"; };
+		F0614E432BF9E775008AAF10 /* MyDetailReviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailReviewRouter.swift; sourceTree = "<group>"; };
+		F0614E442BF9E775008AAF10 /* MyDetailReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailReviewViewController.swift; sourceTree = "<group>"; };
+		F0614E452BF9E775008AAF10 /* MyDetailReviewBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailReviewBuilder.swift; sourceTree = "<group>"; };
+		F0614E462BF9E775008AAF10 /* MyDetailReviewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailReviewInteractor.swift; sourceTree = "<group>"; };
+		F0614E4B2BF9EA55008AAF10 /* MyDetailReviewViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDetailReviewViewHolder.swift; sourceTree = "<group>"; };
 		F0687BEC2A529679004B5EAE /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F068A96F2A99E76A000AFD52 /* FilterRenderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterRenderable.swift; sourceTree = "<group>"; };
 		F069DBE52A30B9850001D3DD /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		F069DBE82A30BA8C0001D3DD /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		F069DBE92A30BA8C0001D3DD /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		F069DBEA2A30BA8C0001D3DD /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		F06E3D972C0C428D00D6C195 /* ActionButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonCell.swift; sourceTree = "<group>"; };
 		F06F40282B35E2FC00897396 /* AdMobManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobManager.swift; sourceTree = "<group>"; };
 		F06F40312B35EE2800897396 /* CurationAdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurationAdCell.swift; sourceTree = "<group>"; };
 		F06F40362B37361500897396 /* NativeAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAdView.swift; sourceTree = "<group>"; };
@@ -700,6 +730,7 @@
 				B2EFFAB82ACBF63D007AF2EE /* StarView.swift */,
 				B2EFFABA2ACBF680007AF2EE /* StarRatingView.swift */,
 				B2EFFABC2ACBF69C007AF2EE /* StarRatedView.swift */,
+				F0614E342BF9D7D5008AAF10 /* ProductInfoStackView.swift */,
 			);
 			path = Review;
 			sourceTree = "<group>";
@@ -884,6 +915,7 @@
 				B28205012A346FDD00F9242F /* ProfileHomeInteractor.swift */,
 				F0EE10A22A4B242C00B8DF4F /* ProfileCell.swift */,
 				F00609512A5EED4600A2A79D /* SettingInfo.swift */,
+				F0614E302BF9D037008AAF10 /* ProfileHomeViewHolder.swift */,
 			);
 			path = ProfileHome;
 			sourceTree = "<group>";
@@ -1334,6 +1366,8 @@
 				BA87E3DA2A4623D7000A9DEC /* Entity */,
 				BA87E3C72A45C579000A9DEC /* ProductDetail */,
 				B2538B8F2A3454FA00B7C3F0 /* ProfileHome */,
+				F0614E272BF9C8D4008AAF10 /* MyReview */,
+				F0614E422BF9E74D008AAF10 /* MyDetailReview */,
 				F075D0C32B052ED500DD0F5E /* ProfileEdit */,
 				B2538B8E2A3454F100B7C3F0 /* EventHome */,
 				B2538B8D2A3454EA00B7C3F0 /* ProductHome */,
@@ -1392,7 +1426,6 @@
 				BAE9843A2AACFB3400ED22CB /* ImageCell */,
 				BAE9843B2AACFB5F00ED22CB /* InformationCell */,
 				BAE9843C2AACFB7000ED22CB /* ReviewWriteCell */,
-				BAE9843D2AACFB8C00ED22CB /* ReviewCell */,
 			);
 			path = Subview;
 			sourceTree = "<group>";
@@ -1517,6 +1550,40 @@
 			path = EventDetail;
 			sourceTree = "<group>";
 		};
+		F0614E272BF9C8D4008AAF10 /* MyReview */ = {
+			isa = PBXGroup;
+			children = (
+				F0614E3F2BF9DE2D008AAF10 /* View */,
+				F0614E282BF9C901008AAF10 /* MyReviewRouter.swift */,
+				F0614E292BF9C901008AAF10 /* MyReviewViewController.swift */,
+				F0614E2A2BF9C901008AAF10 /* MyReviewBuilder.swift */,
+				F0614E2B2BF9C901008AAF10 /* MyReviewInteractor.swift */,
+				F0614E322BF9D2F8008AAF10 /* MyReviewViewHolder.swift */,
+			);
+			path = MyReview;
+			sourceTree = "<group>";
+		};
+		F0614E3F2BF9DE2D008AAF10 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F0614E3D2BF9DD01008AAF10 /* MyReviewContentView.swift */,
+				F0614E402BF9DE43008AAF10 /* MyReviewContentConfiguration.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0614E422BF9E74D008AAF10 /* MyDetailReview */ = {
+			isa = PBXGroup;
+			children = (
+				F0614E432BF9E775008AAF10 /* MyDetailReviewRouter.swift */,
+				F0614E442BF9E775008AAF10 /* MyDetailReviewViewController.swift */,
+				F0614E452BF9E775008AAF10 /* MyDetailReviewBuilder.swift */,
+				F0614E462BF9E775008AAF10 /* MyDetailReviewInteractor.swift */,
+				F0614E4B2BF9EA55008AAF10 /* MyDetailReviewViewHolder.swift */,
+			);
+			path = MyDetailReview;
+			sourceTree = "<group>";
+		};
 		F0687BEB2A529666004B5EAE /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -1541,6 +1608,23 @@
 				F069DBE82A30BA8C0001D3DD /* Pretendard-Medium.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		F06E3D952C0C401B00D6C195 /* EmptyCell */ = {
+			isa = PBXGroup;
+			children = (
+				BAE442C52A6D7B9E00BD6582 /* EmptyCell.swift */,
+				BAE442C72A6D7C3900BD6582 /* EmptyCell+ViewHolder.swift */,
+			);
+			path = EmptyCell;
+			sourceTree = "<group>";
+		};
+		F06E3D962C0C412500D6C195 /* ActionButtonCell */ = {
+			isa = PBXGroup;
+			children = (
+				F06E3D972C0C428D00D6C195 /* ActionButtonCell.swift */,
+			);
+			path = ActionButtonCell;
 			sourceTree = "<group>";
 		};
 		F06F40272B35E2D800897396 /* Manager */ = {
@@ -1706,10 +1790,11 @@
 		F0D6FFA72A39F57600C55E27 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				F06E3D962C0C412500D6C195 /* ActionButtonCell */,
+				BAE9843D2AACFB8C00ED22CB /* ReviewCell */,
+				F06E3D952C0C401B00D6C195 /* EmptyCell */,
 				F0B6E6C82AB8A2E700AA7006 /* ProductCell */,
 				B24F1D302A431E1700AA03DC /* ConvenienceStoreCell.swift */,
-				BAE442C52A6D7B9E00BD6582 /* EmptyCell.swift */,
-				BAE442C72A6D7C3900BD6582 /* EmptyCell+ViewHolder.swift */,
 				F0C698642A6BA9B00019C677 /* CategoryFilterCell.swift */,
 				F040E9D22A6D8E8800DF0C4A /* RefreshFilterCell.swift */,
 				F040E9D42A6D967300DF0C4A /* KeywordFilterCell.swift */,
@@ -1911,6 +1996,7 @@
 				F0C698732A6D4DBF0019C677 /* TopCommonSectionLayout.swift in Sources */,
 				F097EF2E2A57187400A7FB9C /* ProfileUrl.swift in Sources */,
 				B21C1A8C2A513FBB007D98E9 /* RIBs+.swift in Sources */,
+				F0614E4C2BF9EA55008AAF10 /* MyDetailReviewViewHolder.swift in Sources */,
 				BA1807622A2F21D900295398 /* URLRequest+.swift in Sources */,
 				BA18C0B12A759EAC007D00BD /* ProductSearchSortBottomSheetViewController.swift in Sources */,
 				BA18C0922A753464007D00BD /* SearchFilterHeader+ViewHolder.swift in Sources */,
@@ -1933,6 +2019,7 @@
 				F0168D542A500AC900978ED9 /* EventDetailInteractor.swift in Sources */,
 				BA87501C2A519A9200B80088 /* ImageAssetKind+StoreIcon.swift in Sources */,
 				B24891632B3AD2E5009D0FBF /* HomeBannerEntity.swift in Sources */,
+				F0614E312BF9D037008AAF10 /* ProfileHomeViewHolder.swift in Sources */,
 				B2F169D62A347208008199D8 /* RootTabBarBuilder.swift in Sources */,
 				BA50FD092A680D2500721782 /* SearchBarView.swift in Sources */,
 				BAE984472AACFFEF00ED22CB /* ProductDetailReviewCell.swift in Sources */,
@@ -1973,6 +2060,10 @@
 				BA7532E22A595B140002659A /* UserAuthService.swift in Sources */,
 				F0E915D52AAC9E3F000919DA /* CommonProductPageViewControllerRenderable.swift in Sources */,
 				BA8924562A582EE700D1B097 /* NewTagBigView.swift in Sources */,
+				F0614E2C2BF9C901008AAF10 /* MyReviewRouter.swift in Sources */,
+				F0614E2D2BF9C901008AAF10 /* MyReviewViewController.swift in Sources */,
+				F0614E2E2BF9C901008AAF10 /* MyReviewBuilder.swift in Sources */,
+				F0614E2F2BF9C901008AAF10 /* MyReviewInteractor.swift in Sources */,
 				F075D0C82B052EF300DD0F5E /* ProfileEditRouter.swift in Sources */,
 				BA6CAB802AE84C6600B9E1BF /* UserInfoService.swift in Sources */,
 				BAE442C22A6D2C7A00BD6582 /* LoadingReusableView.swift in Sources */,
@@ -1989,6 +2080,7 @@
 				B24891672B3C2525009D0FBF /* EventBannerHeaderView.swift in Sources */,
 				BA18C0A62A7596F5007D00BD /* BottomToTopPresentAnimator.swift in Sources */,
 				BA18075C2A2F189A00295398 /* UIButton+.swift in Sources */,
+				F0614E352BF9D7D5008AAF10 /* ProductInfoStackView.swift in Sources */,
 				BAD6AEFD2AEC52550062B16F /* ReviewEvaluationLabelView.swift in Sources */,
 				BA50FD042A680AA900721782 /* ProductSearchInteractor.swift in Sources */,
 				B28A592A2A6FCFED00431F39 /* SortFilterCell.swift in Sources */,
@@ -2023,6 +2115,7 @@
 				BAE442C82A6D7C3900BD6582 /* EmptyCell+ViewHolder.swift in Sources */,
 				B24F1D4B2A4BB82D00AA03DC /* TitleNavigationView.swift in Sources */,
 				F00022462A5280FC00FFB4A4 /* NetworkRequestBuilder.swift in Sources */,
+				F06E3D982C0C428D00D6C195 /* ActionButtonCell.swift in Sources */,
 				F00352242A62BD9F00A66FF9 /* UserLoginStatusEntity.swift in Sources */,
 				B28A59272A6FCE9700431F39 /* ProductFilterSectionLayout.swift in Sources */,
 				B242590E2A5947E7006C5223 /* PageableEntity.swift in Sources */,
@@ -2052,6 +2145,7 @@
 				BA6CAB822AE8509000B9E1BF /* ReviewLikeCountEntity.swift in Sources */,
 				F0D6FFAB2A39F89D00C55E27 /* UIView+.swift in Sources */,
 				F0C2B9F12AA4740000ACF3D7 /* EventHomeViewHolder.swift in Sources */,
+				F0614E3E2BF9DD01008AAF10 /* MyReviewContentView.swift in Sources */,
 				BAE984412AACFC3600ED22CB /* ProductDetailImageCell+ViewHolder.swift in Sources */,
 				B24259102A594862006C5223 /* SortEntity.swift in Sources */,
 				B24CAAE32A55AC2D005BE499 /* NotificationListBuilder.swift in Sources */,
@@ -2066,6 +2160,10 @@
 				BA1807552A2F151F00295398 /* ImageAssetKind.swift in Sources */,
 				F06F40372B37361500897396 /* NativeAdView.swift in Sources */,
 				B22496522ABC1BE400BC6B09 /* ReviewPopupRouter.swift in Sources */,
+				F0614E472BF9E775008AAF10 /* MyDetailReviewRouter.swift in Sources */,
+				F0614E482BF9E775008AAF10 /* MyDetailReviewViewController.swift in Sources */,
+				F0614E492BF9E775008AAF10 /* MyDetailReviewBuilder.swift in Sources */,
+				F0614E4A2BF9E775008AAF10 /* MyDetailReviewInteractor.swift in Sources */,
 				F0168D512A500AC900978ED9 /* EventDetailRouter.swift in Sources */,
 				BAF8725D2AD404C0001427DF /* ProductGiftEntity.swift in Sources */,
 				BA87E3DC2A4623E3000A9DEC /* GiftItemEntity.swift in Sources */,
@@ -2129,6 +2227,7 @@
 				BA87E3D72A45D40A000A9DEC /* GiftInformationView.swift in Sources */,
 				F0B90DCC2ADD2167005DE34A /* FavoriteHomePageViewController.swift in Sources */,
 				BA83225E2AB77E9E00D2E1EB /* ReviewEvaluationState.swift in Sources */,
+				F0614E332BF9D2F8008AAF10 /* MyReviewViewHolder.swift in Sources */,
 				F0E915B12AA87BB4000919DA /* ControlSubscription.swift in Sources */,
 				B28205042A346FDD00F9242F /* ProfileHomeBuilder.swift in Sources */,
 				BAE984432AACFE3200ED22CB /* ProductDetailInformationCell.swift in Sources */,
@@ -2198,6 +2297,7 @@
 				B224965B2ABD8A7700BC6B09 /* UIImage+.swift in Sources */,
 				B28A59242A6FB2B200431F39 /* ProductFilterBuilder.swift in Sources */,
 				B2C25CDB2B65166E005C6F0D /* ProductType.swift in Sources */,
+				F0614E412BF9DE43008AAF10 /* MyReviewContentConfiguration.swift in Sources */,
 				F0DEABA02AAF410B00941A5F /* FavoriteHomeBuilder.swift in Sources */,
 				BA00B7392A46B8BF00BB3795 /* Spacing.swift in Sources */,
 				BA00B73C2A46B98700BB3795 /* SnapKit+.swift in Sources */,
@@ -2490,7 +2590,7 @@
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 10.14.0;
+				minimumVersion = 11.2.0;
 			};
 		};
 		F0C9E0C62A7BF63600A53166 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {

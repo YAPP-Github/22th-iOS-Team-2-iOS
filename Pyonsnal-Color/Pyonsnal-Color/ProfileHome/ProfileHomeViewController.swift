@@ -12,6 +12,7 @@ import SnapKit
 import MessageUI
 
 protocol ProfileHomePresentableListener: AnyObject {
+    func didTapMyReview() // 내 리뷰
     func didTapProfileEditButton(memberInfo: MemberInfoEntity) // 프로파일 편집
     func didTapTeams(with settingInfo: SettingInfo) // 만든 사람들
     func didTapAccountSetting() // 계정 설정
@@ -20,23 +21,13 @@ protocol ProfileHomePresentableListener: AnyObject {
 final class ProfileHomeViewController: UIViewController,
                                        ProfileHomePresentable,
                                        ProfileHomeViewControllable {
-
-    enum Size {
-        static let profileImageViewSize: CGFloat = 40
-        static let profileEditButtonSize: CGFloat = 48
-        static let profileImageViewLeading: CGFloat = 17
-        static let profileContainerViewHeight: CGFloat = 104
-        
-        static let dividerMargin: CGFloat = 12
-        static let cellHeight: CGFloat = 48
-        static let dividerHeight: CGFloat = 1
-    }
     
     enum Section: String {
-        case setting
+        case review // 리뷰
+        case setting // 기타
     }
     
-    enum Setting: Int {
+    enum Setting: Int, CaseIterable {
         case etc = 0
         case email
         case version
@@ -54,13 +45,28 @@ final class ProfileHomeViewController: UIViewController,
         }
     }
     
+    enum Review: Int, CaseIterable {
+        case review = 0
+        case myReview // 내 리뷰
+        
+        var title: String {
+            switch self {
+            case .review:
+                return "리뷰"
+            case .myReview:
+                return "내 리뷰"
+            }
+        }
+    }
+    
     weak var listener: ProfileHomePresentableListener?
     
     // MARK: - Private Property
     private let viewHolder: ViewHolder = .init()
     private var cancellable = Set<AnyCancellable>()
     private var memberInfo: MemberInfoEntity?
-    private let sections: [Section] = [.setting]
+    private let sections: [Section] = [.review, .setting]
+    private var reviews: [Review] = [.review, .myReview]
     private var settings: [Setting] = [.etc, .email, .version, .teams, .account]
     
     // MARK: - Initializer
@@ -119,10 +125,17 @@ final class ProfileHomeViewController: UIViewController,
                 guard let self, let memberInfo else { return }
                 self.listener?.didTapProfileEditButton(memberInfo: memberInfo)
             }.store(in: &cancellable)
+        
+        viewHolder.charactorLandingButton
+            .tapPublisher
+            .throttle(for: 0.5, scheduler: RunLoop.main, latest: false)
+            .sink { [weak self] _ in
+                guard let self else { return }
+                // TODO: Landing to charactor page
+            }.store(in: &cancellable)
     }
     
     private func configureTabBarItem() {
-        
         tabBarItem.setTitleTextAttributes([.font: UIFont.label2], for: .normal)
         tabBarItem = UITabBarItem(
             title: "마이페이지",
@@ -162,6 +175,8 @@ extension ProfileHomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let section = sections[section]
         switch section {
+        case .review:
+            return reviews.count
         case .setting:
             return settings.count
         }
@@ -173,11 +188,15 @@ extension ProfileHomeViewController: UITableViewDataSource {
         let section = sections[indexPath.section]
         let isSectionIndex = isSectionIndex(with: indexPath.row)
         let isSubLabelToShow = isSubLabelToShow(section: section, index: indexPath.row)
+        let title: String
+        
         switch section {
+        case .review:
+            title = reviews[indexPath.row].title
         case .setting:
-            cell.update(text: settings[indexPath.row].title,
-                        isSectionIndex: isSectionIndex)
+            title = settings[indexPath.row].title
         }
+        cell.update(text: title, isSectionIndex: isSectionIndex)
         cell.setSubLabelHidden(isShow: isSubLabelToShow)
         return cell
     }
@@ -187,7 +206,7 @@ extension ProfileHomeViewController: UITableViewDataSource {
 extension ProfileHomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let defaultHeight = Size.cellHeight
+        let defaultHeight: CGFloat = 48
         return defaultHeight
     }
     
@@ -195,6 +214,10 @@ extension ProfileHomeViewController: UITableViewDelegate {
         let section = sections[indexPath.section]
         if !isSectionIndex(with: indexPath.row) {
             switch section {
+            case .review:
+                if indexPath.row == Review.myReview.rawValue {
+                    listener?.didTapMyReview()
+                }
             case .setting:
                 if indexPath.row == Setting.email.rawValue {
                     showEmailReport()
@@ -211,100 +234,7 @@ extension ProfileHomeViewController: UITableViewDelegate {
     }
 }
 
-// MARK: - UI Component
-extension ProfileHomeViewController {
-    class ViewHolder: ViewHolderable {
-        
-        private let profileContainerView: UIView = {
-            let view = UIView()
-            view.backgroundColor = .white
-            return view
-        }()
-        
-        let profileImageView: UIImageView = {
-            let imageView = UIImageView()
-            imageView.contentMode = .scaleAspectFill
-            imageView.makeRounded(with: Size.profileImageViewSize / 2)
-            imageView.setImage(.tagStore)
-            return imageView
-        }()
-        
-        let nickNameLabel: UILabel = {
-            let label = UILabel()
-            label.font = .title2
-            label.textColor = .black
-            label.numberOfLines = 1
-            return label
-        }()
-        
-        let profileEditButton: UIButton = {
-            let button = UIButton()
-            button.setImage(ImageAssetKind.Profile.profileEdit.image, for: .normal)
-            return button
-        }()
-        
-        let tableView: UITableView = {
-            let tableView = UITableView()
-            tableView.separatorStyle = .none
-            tableView.bounces = false
-            return tableView
-        }()
-        
-        private let dividerView: UIView = {
-            let view = UIView()
-            view.backgroundColor = .gray100
-            return view
-        }()
-        
-        func place(in view: UIView) {
-            view.addSubview(profileContainerView)
-            profileContainerView.addSubview(profileImageView)
-            profileContainerView.addSubview(nickNameLabel)
-            profileContainerView.addSubview(profileEditButton)
-            view.addSubview(dividerView)
-            view.addSubview(tableView)
-        }
-        
-        func configureConstraints(for view: UIView) {
-            profileContainerView.snp.makeConstraints {
-                $0.top.equalTo(view.safeAreaLayoutGuide.snp.top)
-                $0.leading.trailing.equalToSuperview()
-                $0.height.equalTo(Size.profileContainerViewHeight)
-            }
-            
-            profileImageView.snp.makeConstraints {
-                $0.size.equalTo(Size.profileImageViewSize)
-                $0.leading.equalToSuperview().offset(Size.profileImageViewLeading)
-                $0.centerY.equalToSuperview()
-            }
-            
-            nickNameLabel.snp.makeConstraints {
-                $0.leading.equalTo(profileImageView.snp.trailing).offset(.spacing12)
-                $0.centerY.equalTo(profileContainerView.snp.centerY)
-                $0.trailing.greaterThanOrEqualTo(profileEditButton.snp.leading).inset(.spacing12)
-            }
-            
-            profileEditButton.snp.makeConstraints {
-                $0.top.equalToSuperview().offset(.spacing28)
-                $0.trailing.equalToSuperview().inset(.spacing4)
-                $0.size.equalTo(Size.profileEditButtonSize)
-            }
-            
-            dividerView.snp.makeConstraints {
-                $0.top.equalTo(profileContainerView.snp.bottom)
-                $0.leading.trailing.equalToSuperview()
-                $0.height.equalTo(Size.dividerMargin)
-            }
-            
-            tableView.snp.makeConstraints {
-                $0.top.equalTo(dividerView.snp.bottom)
-                $0.leading.trailing.bottom.equalToSuperview()
-            }
-            
-        }
-    }
-}
-
+// MARK: - MFMailComposeViewControllerDelegate
 extension ProfileHomeViewController: MFMailComposeViewControllerDelegate {
     func mailComposeController(
         _ controller: MFMailComposeViewController,

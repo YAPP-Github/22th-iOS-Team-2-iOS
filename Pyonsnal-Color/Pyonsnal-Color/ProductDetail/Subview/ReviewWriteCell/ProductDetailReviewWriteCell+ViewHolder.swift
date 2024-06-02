@@ -81,15 +81,6 @@ extension ProductDetailReviewWriteCell {
             return starRatedView
         }()
         
-        let reviewWriteButton: UIButton = {
-            let button = UIButton(frame: .zero)
-            button.makeRounded(with: Size.writeButtonRadius)
-            button.backgroundColor = .black
-            button.titleLabel?.textColor = .white
-            button.titleLabel?.font = .body2m
-            return button
-        }()
-        
         // MARK: - Interface
         func place(in view: UIView) {
             view.addSubview(contentView)
@@ -97,7 +88,6 @@ extension ProductDetailReviewWriteCell {
             contentView.addSubview(reviewCountLabel)
             contentView.addSubview(sortButton)
             contentView.addSubview(ratingBackgroundView)
-            contentView.addSubview(reviewWriteButton)
             
             ratingBackgroundView.addSubview(ratingScoreStackView)
             ratingBackgroundView.addSubview(starRatedView)
@@ -140,12 +130,6 @@ extension ProductDetailReviewWriteCell {
                 make.bottom.equalToSuperview().inset(.spacing24)
             }
             
-            reviewWriteButton.snp.makeConstraints { make in
-                make.height.equalTo(40)
-                make.top.equalTo(ratingBackgroundView.snp.bottom).offset(.spacing16)
-                make.leading.trailing.equalToSuperview().inset(.spacing16)
-                make.bottom.equalToSuperview().inset(.spacing40)
-            }
         }
     }
 }

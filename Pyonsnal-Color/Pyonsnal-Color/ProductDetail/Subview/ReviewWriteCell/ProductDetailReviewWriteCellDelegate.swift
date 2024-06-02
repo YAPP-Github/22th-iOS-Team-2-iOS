@@ -6,6 +6,5 @@
 //
 
 protocol ProductDetailReviewWriteCellDelegate: AnyObject {
-    func writeButtonDidTap()
     func sortButtonDidTap()
 }

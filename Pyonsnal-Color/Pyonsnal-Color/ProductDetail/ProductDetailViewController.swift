@@ -180,6 +180,10 @@ extension ProductDetailViewController: UICollectionViewDataSource {
             )
             reviewWriteCell.delegate = self
             return reviewWriteCell
+        case .actionButton:
+            let actionButtonCell: ActionButtonCell = collectionView.dequeueReusableCell(for: indexPath)
+            actionButtonCell.actionButton.setText(with: ActionButtonCell.Constants.Text.writeReview)
+            return actionButtonCell
         case let .review(entity):
             let reviewCell: ProductDetailReviewCell = collectionView.dequeueReusableCell(
                 for: indexPath
@@ -236,7 +240,9 @@ extension ProductDetailViewController: UICollectionViewDelegateFlowLayout {
             )
             return .init(width: screenWidth, height: estimateSize.height)
         case .reviewWrite:
-            return .init(width: screenWidth, height: 300)
+            return .init(width: screenWidth, height: 114)
+        case .actionButton:
+            return .init(width: screenWidth, height: 96)
         case let .review(entity):
             let width = collectionView.bounds.size.width
             let estimateHeight: CGFloat = 1000

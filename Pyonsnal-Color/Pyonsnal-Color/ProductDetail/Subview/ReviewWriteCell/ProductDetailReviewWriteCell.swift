@@ -49,10 +49,6 @@ final class ProductDetailReviewWriteCell: UICollectionViewCell {
     }
     
     private func configureAction() {
-        viewHolder.reviewWriteButton.addTapGesture(
-            target: self,
-            action: #selector(reviewWriteButtonAction(_:))
-        )
         
         viewHolder.sortButton.addTapGesture(
             target: self,
@@ -68,12 +64,7 @@ final class ProductDetailReviewWriteCell: UICollectionViewCell {
         viewHolder.reviewCountLabel.text = "리뷰 \(payload.reviewsCount)개"
         viewHolder.ratingScoreLabel.text = "\(round(payload.score * 10) / 10)"
         viewHolder.starRatedView.payload = .init(score: payload.score)
-        viewHolder.reviewWriteButton.setText(with: "상품 리뷰 작성 하기")
         viewHolder.sortButton.setText(with: payload.sortItem.name)
-    }
-    
-    @objc private func reviewWriteButtonAction(_ sender: UITapGestureRecognizer) {
-        delegate?.writeButtonDidTap()
     }
     
     @objc private func reviewSortButtonAction(_ sender: UITapGestureRecognizer) {

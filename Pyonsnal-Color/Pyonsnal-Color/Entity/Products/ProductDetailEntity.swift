@@ -9,12 +9,12 @@ import Foundation
 
 struct ProductDetailEntity {
     let id: String
-    let storeType: ConvenienceStore //
+    let storeType: ConvenienceStore
     let imageURL: URL
     let name: String
     let price: String
-    let eventType: EventTag? //
-    let productType: ProductType //
+    let eventType: EventTag?
+    let productType: ProductType
     let updatedTime: String
     let description: String?
     let isNew: Bool?
