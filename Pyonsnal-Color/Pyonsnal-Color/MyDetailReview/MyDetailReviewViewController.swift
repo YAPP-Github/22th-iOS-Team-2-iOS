@@ -34,7 +34,6 @@ final class MyDetailReviewViewController: UIViewController,
     // MARK: Private Properties
     private let viewHolder: ViewHolder = .init()
     private var dataSource: DataSource?
-    private var snapshot = Snapshot()
     private var productDetail: ProductDetailEntity?
     private var review: ReviewEntity?
     
@@ -47,15 +46,12 @@ final class MyDetailReviewViewController: UIViewController,
         self.bindActions()
         self.configureCollectionView()
         self.configureDataSource()
-        if let productDetail, let review {
-            self.applySnapshot(with: productDetail, review: review)
-        }
+        self.applySnapshot(with: productDetail, review: review)
     }
     
     func update(with productDetail: ProductDetailEntity, review: ReviewEntity) {
         self.productDetail = productDetail
         self.review = review
-        self.applySnapshot(with: productDetail, review: review)
     }
     
     // MARK: Private Methods
@@ -87,14 +83,16 @@ final class MyDetailReviewViewController: UIViewController,
             case .productDetail(let product):
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyReviewContentView.identifier, for: indexPath)
                 cell.contentConfiguration = MyReviewContentConfiguration(
+                    mode: .tastes,
                     storeImageIcon: product.storeType,
                     imageUrl: product.imageURL,
-                    title: product.name
+                    title: "프링글스) 매콤한맛(대) 프링글스) 매콤한맛(대)프링글스) 매콤한맛(대)프링글스) 매콤한맛",
+                    tastesTag: ["카페인 러버", "헬창", "캐릭터컬렉터", "캐릭터컬렉터"]
                 )
                 return cell
             case .review(let review):
                 let cell: ProductDetailReviewCell = collectionView.dequeueReusableCell(for: indexPath)
-                cell.payload = .init(review: review)
+                cell.payload = .init(hasEvaluateView: false, review: review)
                 return cell
             case .landing:
                 let cell: ActionButtonCell = collectionView.dequeueReusableCell(for: indexPath)
@@ -104,7 +102,8 @@ final class MyDetailReviewViewController: UIViewController,
         }
     }
     
-    private func applySnapshot(with productDetail: ProductDetailEntity, review: ReviewEntity) {
+    private func applySnapshot(with productDetail: ProductDetailEntity?, review: ReviewEntity?) {
+        guard let productDetail, let review else { return }
         var snapshot = Snapshot()
         snapshot.appendSections([.main])
         snapshot.appendItems([.productDetail(product: productDetail)])
@@ -114,6 +113,7 @@ final class MyDetailReviewViewController: UIViewController,
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension MyDetailReviewViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let item = dataSource?.itemIdentifier(for: indexPath) else { return CGSize.zero }
@@ -128,7 +128,7 @@ extension MyDetailReviewViewController: UICollectionViewDelegateFlowLayout {
                 origin: .zero,
                 size: .init(width: screenWidth, height: estimateHeight)
             )
-            cell.payload = .init(review: review)
+            cell.payload = .init(hasEvaluateView: false, review: review)
             cell.layoutIfNeeded()
             let estimateSize = cell.systemLayoutSizeFitting(
                 .init(width: screenWidth, height: UIView.layoutFittingCompressedSize.height),
@@ -142,6 +142,7 @@ extension MyDetailReviewViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: - BackNavigationViewDelegate
 extension MyDetailReviewViewController: BackNavigationViewDelegate {
     func didTapBackButton() {
         listener?.didTapBackButton()

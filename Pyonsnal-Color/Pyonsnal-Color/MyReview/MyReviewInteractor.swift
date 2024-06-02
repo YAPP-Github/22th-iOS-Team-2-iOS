@@ -18,7 +18,7 @@ protocol MyReviewPresentable: Presentable {
 }
 
 protocol MyReviewListener: AnyObject {
-    // TODO: Declare methods the interactor can invoke to communicate with other RIBs.
+    func detachMyReview()
 }
 
 final class MyReviewInteractor: PresentableInteractor<MyReviewPresentable>, MyReviewInteractable, MyReviewPresentableListener {
@@ -46,10 +46,14 @@ final class MyReviewInteractor: PresentableInteractor<MyReviewPresentable>, MyRe
     func didTapMyDetailReview(with productDetail: ProductDetailEntity, reviewId: String) {
         // TODO: 받아온 값으로 수정
 //        guard let review = productDetail.reviews.first(where: { $0.reviewId == reviewId }) else { return }
-        router?.attachMyDetailReview(productDetail: productDetail, review: .init(reviewId: "", taste: .good, quality: .bad, valueForMoney: .normal, score: 0, contents: "", image: nil, writerId: nil, writerName: "", createdTime: "", updatedTime: "", likeCount: .init(writerIds: [], likeCount: 0), hateCount: .init(writerIds: [], hateCount: 0)))
+        router?.attachMyDetailReview(productDetail: productDetail, review: .init(reviewId: "", taste: .good, quality: .bad, valueForMoney: .normal, score: 0, contents: "설명입니다 설명입니다 설명입니다 설명입니다 설명입니다 설명입니다설명입니다 설명입니다 설명입니다", image: nil, writerId: nil, writerName: "양볼 빵빵 다람쥐", createdTime: "", updatedTime: "", likeCount: .init(writerIds: [], likeCount: 0), hateCount: .init(writerIds: [], hateCount: 0)))
     }
     
     func didTapBackButton() {
         router?.detachMyDetailReview()
+    }
+    
+    func didTapMyReviewBackButton() {
+        listener?.detachMyReview()
     }
 }

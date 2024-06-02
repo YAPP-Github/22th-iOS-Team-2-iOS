@@ -10,9 +10,9 @@ import SnapKit
 
 class ProductInfoStackView: UIStackView {
     enum Mode {
-        case starRating
-        case date
-        case taste
+        case starRating // 별점
+        case date // 날짜
+        case tastes // 취향 태그
     }
     
     let productImageView: UIImageView = {
@@ -40,11 +40,11 @@ class ProductInfoStackView: UIStackView {
     let productNameLabel: UILabel = {
         let label = UILabel()
         label.font = .body3m
-        label.numberOfLines = 1
+        label.numberOfLines = 2
         return label
     }()
     
-    let starRatedView = StarRatedView(score: 0)
+    lazy var starRatedView = StarRatedView(score: 0)
     
     let dateLabel: UILabel = {
         let label = UILabel()
@@ -53,21 +53,28 @@ class ProductInfoStackView: UIStackView {
         return label
     }()
     
-    let tasteLabel: UILabel = {
+    let tastesLabel: UILabel = {
         let label = UILabel()
         label.font = .body3r
         label.textColor = .red500
+        label.numberOfLines = 2
         return label
     }()
     
     init(mode: Mode) {
         super.init(frame: .zero)
         self.initialize()
-        self.configureView(with: mode)
+        self.configureView()
+        self.addArrangedSubview(with: mode)
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setTastes(tastesTag: [String]) {
+        let tastes = tastesTag.map { "# \($0)"}.joined(separator: " ")
+        self.tastesLabel.text = tastes
     }
     
     private func initialize() {
@@ -79,25 +86,18 @@ class ProductInfoStackView: UIStackView {
             top: .spacing24,
             left: .spacing16,
             bottom: .spacing24,
-            right: 0
+            right: .spacing16
         )
     }
     
-    private func configureView(with mode: Mode) {
+    private func configureView() {
         self.addArrangedSubview(productImageView)
         self.addArrangedSubview(productInformationStackView)
         
         self.productInformationStackView.addArrangedSubview(storeImageView)
         self.productInformationStackView.addArrangedSubview(productNameLabel)
-        
-        switch mode {
-        case .starRating:
-            self.productInformationStackView.addArrangedSubview(starRatedView)
-        case .date:
-            self.productInformationStackView.addArrangedSubview(dateLabel)
-        case .taste:
-            self.productInformationStackView.addArrangedSubview(tasteLabel)
-        }
+        self.productNameLabel.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
+        self.tastesLabel.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         
         self.productImageView.snp.makeConstraints {
             $0.width.height.equalTo(100)
@@ -105,6 +105,17 @@ class ProductInfoStackView: UIStackView {
         
         self.storeImageView.snp.makeConstraints {
             $0.height.equalTo(20)
+        }
+    }
+    
+    private func addArrangedSubview(with mode: Mode) {
+        switch mode {
+        case .starRating:
+            self.productInformationStackView.addArrangedSubview(starRatedView)
+        case .date:
+            self.productInformationStackView.addArrangedSubview(dateLabel)
+        case .tastes:
+            self.productInformationStackView.addArrangedSubview(tastesLabel)
         }
     }
 }

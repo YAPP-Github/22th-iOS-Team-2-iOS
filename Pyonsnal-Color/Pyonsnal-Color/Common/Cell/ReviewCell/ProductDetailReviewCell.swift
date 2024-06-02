@@ -16,6 +16,7 @@ final class ProductDetailReviewCell: UICollectionViewCell {
     
     // MARK: - Declaration
     struct Payload {
+        var hasEvaluateView: Bool = true
         let review: ReviewEntity
     }
     
@@ -92,7 +93,6 @@ final class ProductDetailReviewCell: UICollectionViewCell {
         } else {
             viewHolder.reviewLabel.isHidden = false
             
-            
             viewHolder.reviewLabel.snp.makeConstraints { make in
                 make.top.equalTo(viewHolder.contentStackView.snp.bottom).offset(.spacing12)
                 make.leading.trailing.equalToSuperview().inset(.spacing20)
@@ -114,6 +114,17 @@ final class ProductDetailReviewCell: UICollectionViewCell {
             isSelected: review.hateCount.writerIds.contains(UserInfoService.shared.memberID ?? 0),
             count: review.hateCount.hateCount
         )
+        
+        if !payload.hasEvaluateView {
+            viewHolder.goodButton.isHidden = true
+            viewHolder.badButton.isHidden = true
+            viewHolder.goodButton.snp.remakeConstraints {
+                $0.height.equalTo(0)
+            }
+            viewHolder.badButton.snp.remakeConstraints {
+                $0.height.equalTo(0)
+            }
+        }
     }
     
     @objc private func goodButtonAction(_ sender: UITapGestureRecognizer) {

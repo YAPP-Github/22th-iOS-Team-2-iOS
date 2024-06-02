@@ -118,4 +118,8 @@ final class ProfileHomeInteractor: PresentableInteractor<ProfileHomePresentable>
         router?.detachLoggedOut()
     }
     
+    func detachMyReview() {
+        router?.detachMyReview()
+    }
+    
 }

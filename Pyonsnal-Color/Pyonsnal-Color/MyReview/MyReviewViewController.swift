@@ -9,7 +9,7 @@ import ModernRIBs
 import UIKit
 
 protocol MyReviewPresentableListener: AnyObject {
-    func didTapBackButton()
+    func didTapMyReviewBackButton()
     func didTapMyDetailReview(with productDetail: ProductDetailEntity, reviewId: String)
 }
 
@@ -78,6 +78,7 @@ extension MyReviewViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: MyReviewContentView.identifier, for: indexPath)
         cell.selectionStyle = .none // TODO: interactor로부터 받아온 값으로 변경
         cell.contentConfiguration = MyReviewContentConfiguration(
+            mode: .date,
             storeImageIcon: .sevenEleven,
             imageUrl: URL(string: "www.naver.com")!,
             title: "테스트",
@@ -90,6 +91,6 @@ extension MyReviewViewController: UITableViewDataSource {
 // MARK: - BackNavigationViewDelegate
 extension MyReviewViewController: BackNavigationViewDelegate {
     func didTapBackButton() {
-        listener?.didTapBackButton()
+        listener?.didTapMyReviewBackButton()
     }
 }

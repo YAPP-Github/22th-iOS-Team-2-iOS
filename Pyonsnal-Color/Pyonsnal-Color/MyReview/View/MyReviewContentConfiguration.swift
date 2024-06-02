@@ -12,16 +12,27 @@ struct MyReviewContentConfiguration: UIContentConfiguration {
     var imageUrl: URL
     var title: String
     var date: String?
+    var mode: ProductInfoStackView.Mode
+    var tastesTag: [String]?
     
-    init(storeImageIcon: ConvenienceStore, imageUrl: URL, title: String, date: String? = nil) {
+    init(
+        mode: ProductInfoStackView.Mode,
+        storeImageIcon: ConvenienceStore,
+        imageUrl: URL,
+        title: String,
+        date: String? = nil,
+        tastesTag: [String]? = nil
+    ) {
+        self.mode = mode
         self.storeImageIcon = storeImageIcon
         self.imageUrl = imageUrl
         self.title = title
         self.date = date
+        self.tastesTag = tastesTag
     }
     
     func makeContentView() -> any UIView & UIContentView {
-        return MyReviewContentView(configuration: self)
+        return MyReviewContentView(configuration: self, mode: mode)
     }
     
     func updated(for state: any UIConfigurationState) -> MyReviewContentConfiguration {

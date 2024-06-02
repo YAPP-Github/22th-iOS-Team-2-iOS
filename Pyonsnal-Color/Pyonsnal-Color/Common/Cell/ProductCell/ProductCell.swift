@@ -52,7 +52,7 @@ final class ProductCell: UICollectionViewCell {
             }.store(in: &cancellable)
     }
     
-    func updateCell(with product: (ProductDetailEntity)?) {
+    func updateCell(with product: ProductDetailEntity?) {
         guard let product else { return }
         self.product = product
         viewHolder.titleLabel.text = product.name

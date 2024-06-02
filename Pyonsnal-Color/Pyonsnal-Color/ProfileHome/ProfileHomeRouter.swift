@@ -126,7 +126,7 @@ final class ProfileHomeRouter: ViewableRouter<ProfileHomeInteractable,
         guard let myReviewRouting else { return }
         self.myReviewRouting = nil
         detachChild(myReviewRouting)
-        viewController.uiviewController.dismiss(animated: true)
+        viewController.popViewController(animated: true)
     }
     
     func attachLoggedOut() {

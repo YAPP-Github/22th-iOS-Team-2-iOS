@@ -14,10 +14,11 @@ class MyReviewContentView: UIView, UIContentView {
     var configuration: any UIContentConfiguration
     private let storeImageViewHeight: CGFloat = 20
     
-    private var productInfoStackView = ProductInfoStackView(mode: .date)
+    private var productInfoStackView: ProductInfoStackView
     
-    init(configuration: any UIContentConfiguration) {
+    init(configuration: any UIContentConfiguration, mode: ProductInfoStackView.Mode) {
         self.configuration = configuration
+        self.productInfoStackView = ProductInfoStackView(mode: mode)
         super.init(frame: .zero)
         configureView()
         configureUI()
@@ -47,8 +48,11 @@ class MyReviewContentView: UIView, UIContentView {
         }
         
         if let date = configuration.date {
-            let dateString = DateFormatter.productLastUpdateFormatter.date(from: date)?.toString()
-            self.productInfoStackView.dateLabel.text = dateString
+            self.productInfoStackView.dateLabel.text = configuration.date
+        }
+        
+        if let tastesTag = configuration.tastesTag {
+            self.productInfoStackView.setTastes(tastesTag: tastesTag)
         }
     }
 }
