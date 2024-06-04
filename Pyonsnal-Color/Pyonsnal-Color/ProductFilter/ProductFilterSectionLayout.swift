@@ -13,7 +13,7 @@ final class ProductFilterSectionLayout {
         static let sortCellHeight: CGFloat = 40
         static let eventCellHeight: CGFloat = 40
         static let categoryCellHeight: CGFloat = 108
-        static let userTasteCellHeight: CGFloat = 108
+        static let productTastesCellHeight: CGFloat = 108
     }
     
     private func createSortSection() -> NSCollectionLayoutSection {
@@ -102,7 +102,7 @@ final class ProductFilterSectionLayout {
         return section
     }
     
-    private func createUserTasteSection() -> NSCollectionLayoutSection {
+    private func createProductTastesSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.33),
             heightDimension: .fractionalHeight(1)
@@ -111,7 +111,7 @@ final class ProductFilterSectionLayout {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(Size.userTasteCellHeight)
+            heightDimension: .estimated(Size.productTastesCellHeight)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
@@ -136,6 +136,8 @@ extension ProductFilterSectionLayout {
             return createEventSection()
         case .category, .recommend:
             return createCategorySection()
+        case .productTastes:
+            return createProductTastesSection()
         // TODO: 상품 취향 필터 추가 예정
         case .unknown:
             return nil

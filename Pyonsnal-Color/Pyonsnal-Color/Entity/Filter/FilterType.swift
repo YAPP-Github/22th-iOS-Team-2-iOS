@@ -12,7 +12,7 @@ enum FilterType: Decodable {
     case recommend // 상품 추천
     case category // 카테고리
     case event // 행사
-    // TODO: 상품 취향 필터 추가 예정
+    case productTastes // 상품 취향
     case unknown
     
     init(from decoder: Decoder) throws {
@@ -23,6 +23,7 @@ enum FilterType: Decodable {
         case "recommend": self = .recommend
         case "category": self = .category
         case "event": self = .event
+        case "productTastes": self = .productTastes
         default: self = .unknown
         }
     }
@@ -37,6 +38,8 @@ enum FilterType: Decodable {
             return "카테고리"
         case .event:
             return "행사"
+        case .productTastes:
+            return "상품 취향"
         case .unknown:
             return ""
         }

@@ -149,6 +149,22 @@ final class ProductHomeViewController:
                 return FilterItem.filter(filterItem: filterItem)
             }
             snapshot.appendItems(filterItems)
+            
+            // TODO: 더미데이터 삭제
+            let dummyProductTasteItems = [
+                FilterItemEntity(name: "카페인러버", code: 0, image: nil),
+                FilterItemEntity(name: "헬창", code: 1, image: nil),
+                FilterItemEntity(name: "캐릭터컬렉터", code: 2, image: nil)
+            ]
+            let dummyProductTaste = [FilterEntity(
+                filterType: .productTastes,
+                defaultText: "상품 취향", 
+                filterItem: dummyProductTasteItems
+            )].map { filter in
+                let filterItem = FilterCellItem(filter: filter)
+                return FilterItem.filter(filterItem: filterItem)
+            }
+            snapshot.appendItems(dummyProductTaste)
         }
         
         filterDataSource?.apply(snapshot, animatingDifferences: true)
