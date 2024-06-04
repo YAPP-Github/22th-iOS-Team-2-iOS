@@ -59,7 +59,6 @@
 		B2674D0E2A42DFF9004193DE /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F069DBEA2A30BA8C0001D3DD /* Pretendard-SemiBold.otf */; };
 		B2674D0F2A42DFFC004193DE /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F069DBE92A30BA8C0001D3DD /* Pretendard-Regular.otf */; };
 		B2674D102A42DFFE004193DE /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F069DBE82A30BA8C0001D3DD /* Pretendard-Medium.otf */; };
-		B26EEA572C0462AB0013D082 /* UserTasteTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26EEA562C0462AB0013D082 /* UserTasteTagView.swift */; };
 		B27349DE2A5AA26300B97E59 /* ProductListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27349DD2A5AA26300B97E59 /* ProductListDelegate.swift */; };
 		B27349E02A5AC7F900B97E59 /* EventBannerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27349DF2A5AC7F900B97E59 /* EventBannerEntity.swift */; };
 		B28204F32A345EB100F9242F /* RootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28204F22A345EB100F9242F /* RootComponent.swift */; };
@@ -393,7 +392,6 @@
 		B2538B912A34551D00B7C3F0 /* LoggedInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInBuilder.swift; sourceTree = "<group>"; };
 		B2538B922A34551D00B7C3F0 /* LoggedInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInInteractor.swift; sourceTree = "<group>"; };
 		B2674D0C2A42DBCA004193DE /* ProductHomeViewHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductHomeViewHolder.swift; sourceTree = "<group>"; };
-		B26EEA562C0462AB0013D082 /* UserTasteTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTasteTagView.swift; sourceTree = "<group>"; };
 		B27349DD2A5AA26300B97E59 /* ProductListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListDelegate.swift; sourceTree = "<group>"; };
 		B27349DF2A5AC7F900B97E59 /* EventBannerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBannerEntity.swift; sourceTree = "<group>"; };
 		B28204F22A345EB100F9242F /* RootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootComponent.swift; sourceTree = "<group>"; };
@@ -888,14 +886,6 @@
 				F00609512A5EED4600A2A79D /* SettingInfo.swift */,
 			);
 			path = ProfileHome;
-			sourceTree = "<group>";
-		};
-		B26EEA552C04629C0013D082 /* UserTasteTagView */ = {
-			isa = PBXGroup;
-			children = (
-				B26EEA562C0462AB0013D082 /* UserTasteTagView.swift */,
-			);
-			path = UserTasteTagView;
 			sourceTree = "<group>";
 		};
 		B28A59112A6E98C000431F39 /* ReusableView */ = {
@@ -1394,7 +1384,6 @@
 		BAE984392AACFB2A00ED22CB /* Subview */ = {
 			isa = PBXGroup;
 			children = (
-				B26EEA552C04629C0013D082 /* UserTasteTagView */,
 				BAD6AEFB2AEC52440062B16F /* ReviewEvaluationLabelView */,
 				BAD6AEF82AEC51970062B16F /* ReviewFeedbackButton */,
 				BAED359B2AC5D428002BC69D /* ReviewTagListView */,
@@ -2182,7 +2171,6 @@
 				BAED359D2AC5D432002BC69D /* ReviewTagListView.swift in Sources */,
 				BA83225C2AB7299F00D2E1EB /* ProductDetailSectionItem.swift in Sources */,
 				B24F1D382A44171800AA03DC /* ProductHomePageViewController.swift in Sources */,
-				B26EEA572C0462AB0013D082 /* UserTasteTagView.swift in Sources */,
 				F0C582C12A55E83400DAD387 /* TermsOfUseRouter.swift in Sources */,
 				F097EF2C2A57181B00A7FB9C /* TermsOfUseUrl.swift in Sources */,
 				F00352212A62B9F000A66FF9 /* AuthType.swift in Sources */,
