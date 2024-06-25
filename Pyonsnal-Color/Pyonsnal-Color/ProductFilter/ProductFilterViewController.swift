@@ -146,7 +146,7 @@ final class ProductFilterViewController:
                     self?.setSelectedItemToCollectionView(at: index)
                 }
                 return cell
-            case .category, .recommend:
+            case .category, .recommend, .productTastes:
                 let cell: RecommendFilterCell = collectionView.dequeueReusableCell(for: index)
                 
                 cell.configureCell(filterItem: item)
