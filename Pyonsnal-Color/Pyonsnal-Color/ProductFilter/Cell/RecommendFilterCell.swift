@@ -10,15 +10,6 @@ import SnapKit
 
 final class RecommendFilterCell: UICollectionViewCell {
     
-    enum Image {
-        static let checkMark = "checkmark"
-    }
-    
-    enum Size {
-        static let selectedBorderWidth: CGFloat = 2
-        static let unselectedBorderWidth: CGFloat = 1
-    }
-    
     private let viewHolder = ViewHolder()
     
     override var isSelected: Bool {
