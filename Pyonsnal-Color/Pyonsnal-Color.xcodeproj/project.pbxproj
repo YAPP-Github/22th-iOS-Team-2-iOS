@@ -205,6 +205,7 @@
 		BA9E23502A234B4D00A539D5 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BA9E234F2A234B4D00A539D5 /* .swiftlint.yml */; };
 		BAAB90332A4FFE3E003A7647 /* BackNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB90322A4FFE3E003A7647 /* BackNavigationView.swift */; };
 		BAAB90372A5051D2003A7647 /* BackNavigationViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAB90362A5051D2003A7647 /* BackNavigationViewDelegate.swift */; };
+		BAAE7F532C31728700FF8452 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = BAAE7F522C31728700FF8452 /* GoogleMobileAds */; };
 		BAB54A952A5949B700D45A80 /* ImageAssetKind+Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB54A942A5949B700D45A80 /* ImageAssetKind+Splash.swift */; };
 		BABBB9662A69951700BC36A0 /* SearchBarViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABBB9652A69951700BC36A0 /* SearchBarViewDelegate.swift */; };
 		BAD6AEFA2AEC519F0062B16F /* ReviewFeedbackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD6AEF92AEC519F0062B16F /* ReviewFeedbackButton.swift */; };
@@ -241,7 +242,6 @@
 		F00352242A62BD9F00A66FF9 /* UserLoginStatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00352232A62BD9F00A66FF9 /* UserLoginStatusEntity.swift */; };
 		F00609522A5EED4600A2A79D /* SettingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00609512A5EED4600A2A79D /* SettingInfo.swift */; };
 		F00609562A5EF87F00A2A79D /* CommonConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00609552A5EF87F00A2A79D /* CommonConstants.swift */; };
-		F0081FB92B2D9222009B3435 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = F0081FB82B2D9222009B3435 /* GoogleMobileAds */; };
 		F013DECB2AFF6BFA00A1F34C /* FavoriteHomeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F013DECA2AFF6BFA00A1F34C /* FavoriteHomeDelegate.swift */; };
 		F015353B2A45A51000A2A8F2 /* EventHomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F015353A2A45A51000A2A8F2 /* EventHomeTabViewController.swift */; };
 		F01535412A45A5A700A2A8F2 /* EventHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01535402A45A5A700A2A8F2 /* EventHomePageViewController.swift */; };
@@ -528,6 +528,7 @@
 		BA9E234F2A234B4D00A539D5 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		BAAB90322A4FFE3E003A7647 /* BackNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackNavigationView.swift; sourceTree = "<group>"; };
 		BAAB90362A5051D2003A7647 /* BackNavigationViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackNavigationViewDelegate.swift; sourceTree = "<group>"; };
+		BAAE7F4D2C316B9900FF8452 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		BAB54A942A5949B700D45A80 /* ImageAssetKind+Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageAssetKind+Splash.swift"; sourceTree = "<group>"; };
 		BABBB9652A69951700BC36A0 /* SearchBarViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewDelegate.swift; sourceTree = "<group>"; };
 		BAD6AEF92AEC519F0062B16F /* ReviewFeedbackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewFeedbackButton.swift; sourceTree = "<group>"; };
@@ -680,7 +681,7 @@
 				BA3EB3002A6074090091C8DB /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				B2A57BEF2A2C7596005DB83E /* KakaoSDKUser in Frameworks */,
 				BA437F072A2357DF00C5DFA8 /* ModernRIBs in Frameworks */,
-				F0081FB92B2D9222009B3435 /* GoogleMobileAds in Frameworks */,
+				BAAE7F532C31728700FF8452 /* GoogleMobileAds in Frameworks */,
 				BA3EB2FC2A6074080091C8DB /* FirebaseAnalytics in Frameworks */,
 				BA3EB3022A6074090091C8DB /* FirebaseCrashlytics in Frameworks */,
 				B2B289DE2A3459FD00F7F1C4 /* Kingfisher in Frameworks */,
@@ -1348,6 +1349,7 @@
 				BA437F082A23583400C5DFA8 /* Resource */,
 				BA437F112A235ED700C5DFA8 /* LoggedOut */,
 				B2A57C3D2A2EF8FF005DB83E /* Service */,
+				BAAE7F4D2C316B9900FF8452 /* PrivacyInfo.xcprivacy */,
 			);
 			path = "Pyonsnal-Color";
 			sourceTree = "<group>";
@@ -1808,7 +1810,7 @@
 				BA3EB2FF2A6074090091C8DB /* FirebaseAnalyticsWithoutAdIdSupport */,
 				BA3EB3012A6074090091C8DB /* FirebaseCrashlytics */,
 				F0C9E0C72A7BF63600A53166 /* Lottie */,
-				F0081FB82B2D9222009B3435 /* GoogleMobileAds */,
+				BAAE7F522C31728700FF8452 /* GoogleMobileAds */,
 			);
 			productName = "Pyonsnal-Color";
 			productReference = BA9E23372A21EF3000A539D5 /* Pyonsnal-Color.app */;
@@ -1846,7 +1848,7 @@
 				B2B289DC2A3459FD00F7F1C4 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				BA3EB2FA2A6074080091C8DB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				F0C9E0C62A7BF63600A53166 /* XCRemoteSwiftPackageReference "lottie-spm" */,
-				F0081FB72B2D9222009B3435 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				BAAE7F512C31728700FF8452 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = BA9E23382A21EF3000A539D5 /* Products */;
 			projectDirPath = "";
@@ -2366,7 +2368,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.yapp.22th.pyonsnalcolor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2401,7 +2403,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = kr.co.yapp.22th.pyonsnalcolor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -2485,12 +2487,12 @@
 				minimumVersion = 1.0.2;
 			};
 		};
-		F0081FB72B2D9222009B3435 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+		BAAE7F512C31728700FF8452 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 10.14.0;
+				minimumVersion = 11.6.0;
 			};
 		};
 		F0C9E0C62A7BF63600A53166 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
@@ -2559,9 +2561,9 @@
 			package = BA437F052A2357DF00C5DFA8 /* XCRemoteSwiftPackageReference "ModernRIBs" */;
 			productName = ModernRIBs;
 		};
-		F0081FB82B2D9222009B3435 /* GoogleMobileAds */ = {
+		BAAE7F522C31728700FF8452 /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F0081FB72B2D9222009B3435 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			package = BAAE7F512C31728700FF8452 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
 			productName = GoogleMobileAds;
 		};
 		F0C9E0C72A7BF63600A53166 /* Lottie */ = {
